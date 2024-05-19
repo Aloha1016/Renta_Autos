@@ -1,11 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Renta de Autos</title>
+    <link rel="stylesheet" href="./css/home.css"> 
 </head>
 <body>
-    
+    <header>
+        <h1>Renta de Autos</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#cars">Autos</a></li>
+                <li><a href="#booking">Reserva</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h2>Bienvenido a Nuestro Servicio de Renta de Autos</h2>
+        <p>Ofrecemos una amplia variedad de autos para satisfacer todas tus necesidades de viaje.</p>
+    </section>
+
+    <section id="cars">
+        <h2>Nuestros Autos</h2>
+        <div class="car-list">
+            <div class="car">
+                <h3>Sedan</h3>
+                <img src="./assets/carro1.png" alt="Sedan">
+                <p>Descripción del sedan.</p>
+            </div>
+            <div class="car">
+                <h3>SUV</h3>
+                <img src="./assets/carro2.png" alt="SUV">
+                <p>Descripción del SUV.</p>
+            </div>
+            <div class="car">
+                <h3>Deportivo</h3>
+                <img src="./assets/carro3.png" alt="Deportivo">
+                <p>Descripción del deportivo.</p>
+            </div>
+            
+        </div>
+    </section>
+
+    <section id="booking">
+        <h2>Reserva tu Auto</h2>
+        <form action="submit_reservation.php" method="post">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="car-type">Tipo de Auto:</label>
+            <select id="car-type" name="car-type">
+                <option value="sedan">Sedan</option>
+                <option value="suv">SUV</option>
+                <option value="deportivo">Deportivo</option>
+                
+            </select>
+
+            <label for="pickup-date">Fecha de Recogida:</label>
+            <input type="date" id="pickup-date" name="pickup-date" required>
+
+            <label for="return-date">Fecha de Devolución:</label>
+            <input type="date" id="return-date" name="return-date" required>
+
+            <button type="submit">Reservar</button>
+        </form>
+    </section>
+
+    <section id="contact">
+        <h2>Contacto</h2>
+        <p>Si tienes alguna pregunta, no dudes en contactarnos:</p>
+        <p>Teléfono: (123) 456-7890</p>
+        <p>Correo Electrónico: info@rentadeautos.com</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Renta de Autos. Todos los derechos reservados.</p>
+    </footer>
 </body>
 </html>
