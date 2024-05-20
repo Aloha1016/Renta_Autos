@@ -11,12 +11,12 @@
 
         public function login() {
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                $usuario = $_POST['usuario'];
+                $correo = $_POST['correo'];
                 $password = $_POST['password'];
-                
-                if (!empty($usuario) && !empty($password)) {
-                    $user = $this->userService->login($usuario, $password);
-                    if($user) {
+
+                if (!empty($correo) && !empty($password)) {
+                    $user = $this->userService->login($correo, $password);
+                    if($correo) {
                         // redirigir a otra pagina
                         echo json_encode(array("success" => true, "message" => "Inicio Satisfactorio"));
                     } else {
@@ -31,16 +31,19 @@
         }
 
         public function registrar() {
+
             $nombre = $_POST['nombre'];
             $apaterno = $_POST['apaterno'];
             $amaterno = $_POST['amaterno'];
+            $estado = $_POST['estado'];
+            $municipio = $_POST['municipio'];
             $direccion = $_POST['direccion'];
             $telefono = $_POST['telefono'];
             $correo = $_POST['correo'];
-            $usuario = $_POST['usuario'];
             $password = $_POST['password'];
+            
 
-            $usuarioNuevo = new User($nombre, $apaterno, $amaterno, $direccion, $telefono, $correo, $usuario, $password);
+            $usuarioNuevo = new User($nombre, $apaterno, $amaterno,$estado, $municipio, $direccion, $telefono, $correo, $password);
 
             $resultado = $this->userService->registrarUsuario($usuarioNuevo);
 
@@ -48,6 +51,59 @@
                 echo json_encode(array("success" => true, "message" => "Usuario Registrado Satisfactoriamente"));
             } else {
                 echo json_encode(array("success" => false, "message" => "Error al registrar usuario"));
+            }
+        }
+
+        public function obtenerTodosUsuarios () {
+            $users = $this->userService->obtenerTodosUsuarios ();
+            if($users){
+                echo json_encode(array("success" => true, "users" => $users));
+            }else{
+                echo json_encode(array("success" => false, "message" => "Error al obtener usuarios"));
+            }
+        }
+
+        public function borrarUsuario($id){
+            $resultado=$this->userService->borrarUsuario($id);
+            if($resultado){
+                echo json_encode(array("success" => true, "message" => "usuario borrado exitosamente"));
+            }else{
+                echo json_encode(array("success" => false, "message" => "error al borrar el usuario"));
+
+            }
+        }
+
+        public function obtenerUsuarioPorId($id){
+            $resultado=$this->userService->obtenerUsuarioPorId($id);
+            if($resultado){
+                echo json_encode(array("success" => true, "user" => $resultado));
+            }else{
+                echo json_encode(array("success" => false, "message" => "error al borrar el usuario"));
+
+            }
+        }
+
+        public function actualizarUsuario($id){
+
+            $nombre = $_POST['nombre'];
+            $apaterno = $_POST['apaterno'];
+            $amaterno = $_POST['amaterno'];
+            $estado = $_POST['estado'];
+            $municipio = $_POST['municipio'];
+            $direccion = $_POST['direccion'];
+            $telefono = $_POST['telefono'];
+            $correo = $_POST['correo'];
+            $password = $_POST['password'];
+
+            $usuarioNuevo = new User($nombre, $apaterno, $amaterno,$estado, $municipio, $direccion, $telefono, $correo, $password);
+
+
+            $resultado = $this->userService->actualizarUsuario($id,$usuarioNuevo);
+
+            if ($resultado) {
+                echo json_encode(array("success" => true, "message" => "Usuario actualizado Satisfactoriamente"));
+            } else {
+                echo json_encode(array("success" => false, "message" => "Error al actualizar usuario"));
             }
         }
     }
