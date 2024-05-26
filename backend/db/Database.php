@@ -5,7 +5,7 @@
         private $conn;
 
         public function __construct () {
-            $this->conn = new mysqli('localhost:8889', 'root', 'root', 'proyecto');
+            $this->conn = new mysqli('localhost:8889', 'root', 'root', 'renta-proyecto');
 
             if ($this->conn->connect_error) {
                 die('Error de Conexion' . $this->conn->connect_error);
