@@ -1,66 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>REGISTRAR - PHP Y DEMAS</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/registrar.css">
-</head>
-<body>
-    <section class="vh-100 bg-image" style="background-image: url('./assets/back1.jpg');">
-        <div class="mask d-flex align-items-center h-100 gradient-custom-3">
-            <div class="container h-100">
-                <div class="row d-flex justify-content-center align-items-center h-100">
-                    <div class="col-12 col-md-9 col-lg-7 col-xl-6">
-                        <div class="card" style="border-radius: 15px;">
-                            <div class="card-body p-5">
-                                <h2 class="text-uppercase text-center mb-5">CREAR UNA CUENTA</h2>
-                                <form id="registrarForm" method="POST" action="../backend/index.php">
-                                    <input type="hidden" name="accion" value="registrar">
-                                    <div data-mdb-input-init class="form-outline mb-4">
-                                        <label for="usuario">Nombre: </label>
-                                        <input type="text" name="nombre" required id="nombre">
-                                    </div>
-                                    <div data-mdb-input-init class="form-outline mb-4">
-                                        <label for="usuario">Apellido Paterno: </label>
-                                        <input type="text" name="apaterno" required id="apaterno">
-                                    </div>
-                                    <div data-mdb-input-init class="form-outline mb-4">
-                                        <label for="usuario">Apellido Materno: </label>
-                                        <input type="text" name="amaterno" required id="amaterno">
-                                    </div>
-                                    <div data-mdb-input-init class="form-outline mb-4">
-                                        <label for="usuario">Direccion: </label>
-                                        <input type="text" name="direccion" required id="direccion">
-                                    </div>
-                                    <div data-mdb-input-init class="form-outline mb-4">
-                                        <label for="usuario">Telefono: </label>
-                                        <input type="text" name="telefono" required id="telefono">
-                                    </div>
-                                    <div data-mdb-input-init class="form-outline mb-4">
-                                        <label for="usuario">Correo: </label>
-                                        <input type="text" name="correo" required id="correo">
-                                    </div>
-                                    <div data-mdb-input-init class="form-outline mb-4">
-                                        <label for="usuario">Usuario: </label>
-                                        <input type="text" name="usuario" required id="usuario">
-                                    </div>
-                                    <div data-mdb-input-init class="form-outline mb-4">
-                                        <label for="password">Password: </label>
-                                        <input type="password" name="password" required id="password">
-                                    </div>
-                                    <div class="d-flex justify-content-center">
-                                        <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">REGISTRARSE</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>REGISTRO</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div
+      class="min-h-screen bg-cover bg-center flex items-center justify-center"
+      style="background-image: url('./assets/register/back.jpg')"
+    >
+      <div
+        class="bg-gradient-to-r from-pink-500 to-red-500 text-white p-8 rounded-lg shadow-lg max-w-md w-full"
+      >
+        <h2
+          class="text-2xl font-bold mb-6 text-center text-zinc-700 dark:text-zinc-200"
+        >
+          REGISTRARSE
+        </h2>
+        <form id="registrarForm" method="POST" action="../backend/index.php">
+          <input type="hidden" name="accion" value="registrar" />
+
+          <div class="mb-4">
+            <label class="block text-zinc-700 dark:text-zinc-200" for="usuario">Nombre: </label>
+            <input type="text" id="nombre" name="nombre" required class="w-full p-2 rounded mt-1 text-black focus:outline-none focus:ring-2 focus:ring-black" />
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-zinc-700 dark:text-zinc-200" for="usuario">Apellido Paterno: </label>
+            <input type="text" name="apaterno" required id="apaterno" class="w-full p-2 rounded mt-1 text-black focus:outline-none focus:ring-2 focus:ring-black" />
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-zinc-700 dark:text-zinc-200" for="usuario">Apellido Materno: </label>
+            <input type="text" name="amaterno" required id="amaterno" class="w-full p-2 rounded mt-1 text-black focus:outline-none focus:ring-2 focus:ring-black" />
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-zinc-700 dark:text-zinc-200" for="usuario">Dirección: </label>
+            <input type="text" name="direccion" required id="direccion" class="w-full p-2 rounded mt-1 text-black focus:outline-none focus:ring-2 focus:ring-black" />
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-zinc-700 dark:text-zinc-200" for="usuario">Teléfono: </label>
+            <input type="tel" name="telefono" required id="telefono" class="w-full p-2 rounded mt-1 text-black focus:outline-none focus:ring-2 focus:ring-black" />
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-zinc-700 dark:text-zinc-200" for="usuario">Correo: </label>
+            <input type="email" name="correo" required id="correo" class="w-full p-2 rounded mt-1 text-black focus:outline-none focus:ring-2 focus:ring-black" />
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-zinc-700 dark:text-zinc-200" for="usuario">Usuario: </label>
+            <input type="text" name="usuario" required id="usuario" class="w-full p-2 rounded mt-1 text-black focus:outline-none focus:ring-2 focus:ring-black" />
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-zinc-700 dark:text-zinc-200" for="password">Password: </label>
+            <input type="password" name="password" required id="password" class="w-full p-2 rounded mt-1 text-black focus:outline-none focus:ring-2 focus:ring-black" />
+          </div>
+
+          <button
+            type="submit"
+            class="w-full mt-10 bg-white text-red-600 font-bold px-6 py-3 rounded hover:bg-black hover:text-white transition duration-200"
+          >
+            REGISTRARSE
+          </button>
+        </form>
+      </div>
+    </div>
     <script src="./js/app.js"></script>
-</body>
+  </body>
 </html>

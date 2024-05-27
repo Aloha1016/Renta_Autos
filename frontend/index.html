@@ -2,12 +2,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>RENTAL CAR</title>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
     <div class="bg-white text-zinc-900">
       <header class="flex justify-between items-center p-6 px-20">
-        <img src="../frontend/assets/logo.png" alt="" width="200px">
+        <img src="../frontend/assets/logo.png" alt="" width="10%">
         <!-- <nav class="space-x-4">
           <a href="#" class="hover:text-red-500">Service</a>
           <a href="#" class="hover:text-red-500">Cars</a>
@@ -15,9 +16,8 @@
           <a href="#" class="hover:text-red-500">About</a>
         </nav> -->
         <div class="space-x-4">
-          <a href="../frontend/registrar.html" class="text-zinc-500 hover:text-red-500">Registrarse</a>
-          <a href="../frontend/iniciarsesion.html" class="bg-red-500 text-white px-4 py-2 rounded">Login</a
-          >
+          <a href="./registrar.html" class="text-zinc-500 hover:text-red-500">Registrarse</a>
+					<a href="./login.html" class="bg-red-500 text-white px-4 py-2 rounded">Login</a>
         </div>
       </header>
       <section
@@ -34,7 +34,7 @@
         </button>
         <div class="mt-10">
           <img
-            src="../frontend/assets/img-index.png"
+            src="./assets/index/img-index.png"
 						width="600px"
 						height="400px"
             class="mx-auto"
@@ -43,7 +43,7 @@
         </div>
       </section>
       <section class="py-20">
-        <h2 class="text-center text-3xl font-bold">Our Impressive Fleet</h2>
+        <h2 class="text-center text-3xl font-bold">Conoce Nuestra Flota Inigualable</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10 px-6">
           <div class="bg-white p-6 rounded-lg shadow">
             <img
@@ -86,6 +86,7 @@
           </div>
         </div>
       </section>
+
       <section class="py-20 bg-zinc-100">
         <h2 class="text-center text-3xl font-bold">¿Porque elegirnos?</h2>
         <div
@@ -93,7 +94,7 @@
         >
           <div class="text-center md:w-1/3 p-4">
             <img
-              src="../frontend/assets/icon-book.png"
+              src="./assets/index/icon-book.png"
               height="200px"
 							width="100px"
               class="mx-auto"
@@ -104,7 +105,7 @@
           </div>
           <div class="text-center md:w-1/3 p-4">
             <img
-              src="../frontend/assets/icon-booking.png"
+              src="./assets/index/icon-booking.png"
               height="200px"
 							width="100px"
               alt="Quality & Variety"
@@ -116,7 +117,7 @@
           </div>
           <div class="text-center md:w-1/3 p-4">
             <img
-              src="../frontend/assets/icon-low-cost.png"
+              src="./assets/index/icon-low-cost.png"
               height="200px"
 							width="100px"
               alt="Affordable Rates"
@@ -128,73 +129,60 @@
           </div>
         </div>
       </section>
-      <section class="py-20">
-        <h2 class="text-center text-3xl font-bold">What Our Customers Say</h2>
-        <div class="mt-10 px-6">
-          <p class="text-center text-xl">
-            "My Drivoxe experience was nothing short of incredible. The pristine
-            car and impeccable service made my trip unforgettable. I'll be back
-            for more."
-          </p>
-          <div class="text-center mt-4">
-            <img
-              src="https://placehold.co/50x50"
-              alt="Customer"
-              class="mx-auto rounded-full"
-              crossorigin="anonymous"
-            />
-            <p class="mt-2">Aleea Thompson</p>
-          </div>
-        </div>
-      </section>
+
       <section class="py-20 bg-zinc-100">
         <h2 class="text-center text-3xl font-bold">
-          Simple Steps to Get the Car
+					Pasos rápidos y sencillos
         </h2>
         <div
           class="flex flex-col md:flex-row justify-around items-center mt-10 px-6"
         >
           <div class="text-center md:w-1/4 p-4">
             <img
-              src="https://placehold.co/100x100"
-              alt="Select"
+              src="./assets/index/icon-select.png"
+              height="100px"
+							width="100px"
               class="mx-auto"
               crossorigin="anonymous"
             />
-            <h3 class="mt-4 text-xl font-bold">Select</h3>
-            <p class="mt-2">Choose your desired car from our fleet.</p>
+            <h3 class="mt-4 text-xl font-bold">Selecciona</h3>
+            <p class="mt-2">Elija el coche que desee de nuestra flota.</p>
           </div>
           <div class="text-center md:w-1/4 p-4">
             <img
-              src="https://placehold.co/100x100"
-              alt="Book"
+              src="./assets/index/icon-book-2.png"
+              height="100px"
+							width="100px"
               class="mx-auto"
               crossorigin="anonymous"
             />
-            <h3 class="mt-4 text-xl font-bold">Book</h3>
-            <p class="mt-2">Reserve your car online or through our app.</p>
+            <h3 class="mt-4 text-xl font-bold">Reserva</h3>
+            <p class="mt-2">Reserva tu coche en linea.</p>
           </div>
           <div class="text-center md:w-1/4 p-4">
             <img
-              src="https://placehold.co/100x100"
+              src="./assets/index/icon-drive.png"
+							height="100px"
+							width="100px"
               alt="Drive"
               class="mx-auto"
               crossorigin="anonymous"
             />
-            <h3 class="mt-4 text-xl font-bold">Drive</h3>
-            <p class="mt-2">Pick up your car and hit the road.</p>
+            <h3 class="mt-4 text-xl font-bold">Conduce</h3>
+            <p class="mt-2">Recoge tu coche.</p>
           </div>
           <div class="text-center md:w-1/4 p-4">
             <img
-              src="https://placehold.co/100x100"
+              src="./assets/index/icon-return.png"
+							height="100px"
+							width="100px"
               alt="Return"
               class="mx-auto"
               crossorigin="anonymous"
             />
-            <h3 class="mt-4 text-xl font-bold">Return</h3>
+            <h3 class="mt-4 text-xl font-bold">Devuelve</h3>
             <p class="mt-2">
-              Bring the car back at the end of your rental period.
-            </p>
+              Devuelva el coche al final de su período de alquiler.</p>
           </div>
         </div>
       </section>
