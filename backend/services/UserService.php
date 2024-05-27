@@ -14,16 +14,17 @@
             $nombre = $usuario->getNombre();
             $apaterno = $usuario->getApaterno();
             $amaterno = $usuario->getAmaterno();
-            $direccion = $usuario->getDireccion();
-            $telefono = $usuario->getTelefono();
+            $estado = $usuario->getEstado();
+            $municipio = $usuario->getMunicipio();
             $correo = $usuario->getCorreo();
-            $username = $usuario->getUsuario();
+            $telefono = $usuario->getTelefono();
+            $direccion = $usuario->getDireccion();
             $password = password_hash($usuario->getPassword(), PASSWORD_DEFAULT);
 
-            $sql_insertar = "INSERT INTO usuarios (id, nombre, apaterno, 
-            amaterno, direccion, telefono, correo, usuario, password) 
+            $sql_insertar = "INSERT INTO usuarios (Usu_Id, Usu_Nombre, Usu_Apellido_Paterno, Usu_Apellido_Materno, 
+            Usu_Correo, Usu_Telefono, Usu_Estado, Usu_Municipio, Usu_Direccion, Usu_Password) 
             VALUES (null, '$nombre', '$apaterno', '$amaterno',
-            '$direccion', '$telefono', '$correo', '$username', '$password')";
+            '$correo','$telefono','$estado','$municipio','$direccion','$password')";
             
             if ($this->db->query($sql_insertar) === TRUE) {
                 return true;
@@ -32,8 +33,9 @@
             }
         }
 
-        public function login($usuario, $password) {
-            $sql_usuario = "SELECT * FROM usuarios WHERE usuario = '$usuario'";
+        public function login($correo, $password) {
+            $sql_usuario = "SELECT * FROM usuarios WHERE
+                Usu_Correo = '$correo'";
 
             $result = $this->db->query($sql_usuario);
             if ($result->num_rows == 1) {
@@ -43,6 +45,76 @@
                 }
             }
             return false;
-        }   
+        }
+
+        public function obtenerTodosUsuarios() {
+            $sql = "SELECT * FROM usuarios";
+            $result = $this->db->query($sql);
+            $users = array();
+
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    $users[] = $row;
+                }
+            }
+
+            return $users;
+        }
+
+        public function actualizarUsuario ($id, $usuario) {
+
+            $nombre = $usuario->getNombre();
+            $apaterno = $usuario->getApaterno();
+            $amaterno = $usuario->getAmaterno();
+            $estado = $usuario->getEstado();
+            $municipio = $usuario->getMunicipio();
+            $correo = $usuario->getCorreo();
+            $telefono = $usuario->getTelefono();
+            $direccion = $usuario->getDireccion();
+            
+            $sql_update = "UPDATE usuarios 
+                SET Usu_Nombre='$nombre',
+                Usu_Apellido_Paterno='$apaterno',
+                Usu_Apellido_Materno='$amaterno',
+                Usu_Correo='$correo',
+                Usu_Telefono='$telefono',
+                Usu_Estado='$estado',
+                Usu_Municipio='$municipio',
+                direccion='$direccion',
+                WHERE Usu_Id='$id'";
+
+            if ($this->db->query($sql_update) === TRUE){
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        public function borrarUsuario ($id) {
+            $sql_borrar = "DELETE FROM usuarios WHERE Usu_Id='$id'";
+            if ($this->db->query($sql_borrar) === TRUE){
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        public function obtenerUsuarioPorId($id) {
+            $sql = "SELECT * FROM usuarios WHERE Usu_Id='$id'";
+            $result = $this->db->query($sql);
+            if ($result->num_rows == 1) {
+                return $result->fetch_assoc();
+            }
+            return null;
+        }
+
+        public function obtenerUsuarioPorCorreo($correo) {
+            $sql = "SELECT * FROM usuarios WHERE Usu_Correo='$correo'";
+            $result = $this->db->query($sql);
+            if ($result->num_rows == 1) {
+                return $result->fetch_assoc();
+            }
+            return null;
+        }
     }
 ?>

@@ -1,159 +1,303 @@
+@import url('https://fonts.googleapis.com/css2?family=Georgia&display=swap');
+
 body {
-    font-family: "Playfair Display", serif;
+    font-family: 'Georgia', serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    background-color: #f5f7fa;
-    color: #444;
+    background-color: #f4f4f4;
 }
 
-header {
-    background-color: #34495e;
-    color: #fff;
-    padding: 1.5em 0;
+.hero {
+    background-color: white;
+    padding: 50px 20px;
     text-align: center;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 2.5em;
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: #ecf0f1;
-    text-decoration: none;
-    font-size: 1.2em;
-}
-
-nav ul li a:hover {
-    text-decoration: underline;
-}
-
-section {
-    padding: 2em 0;
-    text-align: center;
-}
-
-section#home {
-    background-color: #ecf0f1;
-    padding: 3em 0;
-}
-
-section#home h2 {
-    font-size: 2em;
-    margin-bottom: 0.5em;
-}
-
-section#home p {
-    font-size: 1.2em;
-    max-width: 600px;
-    margin: 0 auto;
-    line-height: 1.5;
-}
-
-section#cars .car-list {
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    padding: 2em 0;
+    flex-direction: column;
+    align-items: center;
 }
 
-section#cars .car {
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 1em;
-    margin: 1em;
-    width: 250px;
-    text-align: center;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
 }
 
-section#cars .car:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(0,0,0,0.2);
-}
-
-section#cars .car img {
-    max-width: 100%;
-    border-bottom: 1px solid #ccc;
-    margin-bottom: 1em;
-}
-
-section#cars .car h3 {
-    font-size: 1.5em;
-    margin-bottom: 0.5em;
-}
-
-section#cars .car p {
-    font-size: 1em;
-    line-height: 1.4;
-}
-
-section#booking form {
-    background-color: #fff;
-    padding: 2em;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-section#booking form label {
-    display: block;
-    margin-bottom: 0.5em;
-    font-weight: bold;
-}
-
-section#booking form input,
-section#booking form select,
-section#booking form button {
-    width: 80%;
-    padding: 0.75em;
-    margin-bottom: 1em;
-    border: 1px solid #ccc;
-    border-radius: 7.5px;
-    font-size: 1em;
-}
-
-section#booking form button {
-    background-color: #2980b9;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-section#booking form button:hover {
-    background-color: #3498db;
-}
-
-section#contact p {
+p {
     font-size: 1.2em;
+    margin-bottom: 40px;
 }
 
-footer {
-    background-color: #34495e;
-    color: #fff;
-    padding: 1em 0;
-    position: relative;
+.car-container {
     width: 100%;
-    bottom: 0;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
 }
 
-footer p {
-    margin: 0;
+.car-container img {
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+.features-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.feature {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 7.5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 90%;
     text-align: center;
+    width: 80%;
+}
+
+.feature span {
+    font-size: 0.9em;
+    color: #555;
+}
+
+.feature:hover {
+    background: rgba(255, 255, 255, 1);
+}
+
+.cta {
+    width: 90%;
+    max-width: 600px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.cta h2 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.cta .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #8C6E39;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.cta .btn:hover {
+    background: #bc8e3f;
+}
+
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    .text-car-container {
+        flex: 1;
+        padding-right: 20px;
+    }
+
+    .car-container {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .features-container {
+        flex: 1;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .feature {
+        max-width: 40%;
+    }
+
+    .cta {
+        position: relative;
+        width: 100%;
+        max-width: none;
+        margin: 0 auto;
+        margin-top: 20px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .cta {
+        max-width: 35%;
+        margin-top: 0;
+    }
+
+    .features-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .feature {
+        max-width: 20%;
+    }
+}
+
+.filtros {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.filtros label {
+    margin: 0 10px;
+}
+
+.catalogo-autos {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #fff;
+}
+
+.grid-autos {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* Ajuste inicial para pantallas pequeñas */
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto; /* Centrar el catálogo */
+}
+
+@media (min-width: 768px) {
+    .grid-autos {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas para pantallas medianas */
+    }
+}
+
+@media (min-width: 992px) {
+    .grid-autos {
+        grid-template-columns: repeat(3, 1fr); /* 3 columnas para pantallas grandes */
+    }
+}
+
+.tarjeta-auto {
+    border: 1px solid #000000;
+    padding: 20px;
+    margin: 10px;
+    background: linear-gradient(to bottom, #fff, #f7f7f7);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s, color 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #333;
+}
+
+.tarjeta-auto:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(244, 0, 0, 0.2);
+    background-color: #7e0101;
+    color: #000000;
+}
+
+.tarjeta-auto img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.tarjeta-auto h3 {
+    font-size: 1.2em;
+    margin: 10px 0;
+    text-align: left;
+    color: inherit;
+}
+
+.tarjeta-auto p {
+    font-size: 1em;
+    color: inherit;
+    text-align: left;
+}
+
+.tarjeta-auto .precio-boton {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    margin-top: auto;
+}
+
+.tarjeta-auto button {
+    padding: 10px 20px;
+    background-color: #2f42d3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.tarjeta-auto button:hover {
+    background-color: #1a1291;
+    color: #080000;
+}
+
+button.rentar-boton {
+    padding: 10px 20px;
+    background-color: #d32f2f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button.rentar-boton:hover {
+    background-color: #911212;
+    color: #080000;
+}
+
+.detalles-auto {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.contenido-detalles-auto {
+    background: #fff;
+    padding: 20px;
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.detalles-auto img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.especificaciones-auto, .caracteristicas-auto {
+    text-align: left;
+    margin-top: 20px;
 }

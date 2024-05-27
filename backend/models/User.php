@@ -4,21 +4,23 @@
         private $nombre;
         private $apaterno;
         private $amaterno;
-        private $direccion;
-        private $telefono;
         private $correo;
-        private $usuario;
+        private $telefono;
+        private $estado;
+        private $municipio;
+        private $direccion;
         private $password;
 
         // Creacion del Constructor de la Clase
-        public function __construct ($nombre, $apaterno, $amaterno, $direccion, $telefono, $correo, $usuario, $password) {
+        public function __construct ($nombre, $apaterno, $amaterno,$correo, $telefono,$estado,$municipio, $direccion, $password) {
             $this->nombre = $nombre;
             $this->apaterno = $apaterno;
             $this->amaterno = $amaterno;
-            $this->direccion = $direccion;
-            $this->telefono = $telefono;
             $this->correo = $correo;
-            $this->usuario = $usuario;
+            $this->telefono = $telefono;
+            $this->estado = $estado;
+            $this->municipio = $municipio;
+            $this->direccion = $direccion;
             $this->password = $password;
         }
 
@@ -54,23 +56,6 @@
         public function setAmaterno ($amaterno) {
             $this->amaterno = $amaterno;
         }
-
-        public function getDireccion () {
-            return $this->direccion;
-        }
-
-        public function setDireccion ($direccion) {
-            $this->direccion = $direccion;
-        }
-
-        public function getTelefono () {
-            return $this->telefono;
-        }
-
-        public function setTelefono ($telefono) {
-            $this->telefono = $telefono;
-        }
-
         public function getCorreo () {
             return $this->correo;
         }
@@ -78,13 +63,35 @@
         public function setCorreo ($correo) {
             $this->correo = $correo;
         }
-
-        public function getUsuario () {
-            return $this->usuario;
+        public function getTelefono () {
+            return $this->telefono;
         }
 
-        public function setUsuario ($usuario) {
-            $this->usuario = $usuario;
+        public function setTelefono ($telefono) {
+            $this->telefono = $telefono;
+        }
+        public function getEstado () {
+            return $this->estado;
+        }
+
+        public function setEstado ($estado) {
+            $this->estado = $estado;
+        }
+
+        public function getMunicipio () {
+            return $this->municipio;
+        }
+
+        public function setMunicipio ($municipio) {
+            $this->municipio = $municipio;
+        }
+
+        public function getDireccion () {
+            return $this->direccion;
+        }
+
+        public function setDireccion ($direccion) {
+            $this->direccion = $direccion;
         }
 
         public function getPassword () {
