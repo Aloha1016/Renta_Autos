@@ -241,7 +241,7 @@ p {
 
 .tarjeta-auto button {
     padding: 10px 20px;
-    background-color: #d32f2f;
+    background-color: #2f42d3;
     color: white;
     border: none;
     border-radius: 5px;
@@ -250,6 +250,21 @@ p {
 }
 
 .tarjeta-auto button:hover {
+    background-color: #1a1291;
+    color: #080000;
+}
+
+button.rentar-boton {
+    padding: 10px 20px;
+    background-color: #d32f2f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button.rentar-boton:hover {
     background-color: #911212;
     color: #080000;
 }

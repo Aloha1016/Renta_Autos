@@ -3,22 +3,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const autos = [
         {
             id: 1,
-            nombre: 'Jetta',
-            imagen: 'jetta.jpg',
+            nombre: 'Versa 2021',
+            imagen: 'VERSA_2021.jpg',
             precio: 50,
             especificaciones: {
                 'Cilindros / Válvulas /Cilindrada (cm3)': '4 / 16 válvulas / 1.4 / 1395',
                 'Alimentación': 'Inyección directa de gasolina con turbocompresor e intercooler (TSI)',
                 'Potencia CV (KW) / rpm': '150 (110) / 5000 - 6000',
                 'Par máximo Nm (Kgfm) / rpm': '250 (26) / 1500 - 3500',
-                'Caja de cambios': 'Manual',
-                'Color': 'Blanco'
+                'Caja de cambios': 'Automático',
+                'Color': 'Rojo'
             }
         },
         {
             id: 2,
             nombre: 'BMW SERIE 2',
-            imagen: 'BMW_SERIE_2.jpg',
+            imagen: 'BMW_SERIE2.jpg',
             precio: 120,
             especificaciones: {
                 'Caja de cambios': 'Automático',
@@ -118,7 +118,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 <h3>${auto.nombre}</h3>
                 <div class="precio-boton">
                     <p>Empieza en $${auto.precio}/day</p>
-                    <button onclick="mostrarDetalles(${auto.id})">Rent</button>
+                    <button onclick="mostrarDetalles(${auto.id})">Info</button>
+                    <button class="rentar-boton" onclick="rentarAuto(${auto.id})">Rentar</button>
                 </div>
             `;
             gridAutos.appendChild(tarjetaAuto);
@@ -142,21 +143,21 @@ function mostrarDetalles(autoId) {
     const autos = [
         {
             id: 1,
-            nombre: 'Jetta',
-            imagen: 'jetta.jpg',
+            nombre: 'VERSA 2021',
+            imagen: 'VERSA_2021.jpg',
             especificaciones: {
                 'Cilindros / Válvulas /Cilindrada (cm3)': '4 / 16 válvulas / 1.4 / 1395',
                 'Alimentación': 'Inyección directa de gasolina con turbocompresor e intercooler (TSI)',
                 'Potencia CV (KW) / rpm': '150 (110) / 5000 - 6000',
                 'Par máximo Nm (Kgfm) / rpm': '250 (26) / 1500 - 3500',
-                'Caja de cambios': 'Manual',
-                'Color': 'Blanco'
+                'Caja de cambios': 'Automático',
+                'Color': 'Rojo'
             }
         },
-        {
+        {   
             id: 2,
-            nombre: 'BMW SERIE 7',
-            imagen: 'BMW_SERIE_7.jpg',
+            nombre: 'BMW SERIE 2',
+            imagen: 'BMW_SERIE2.jpg',
             especificaciones: {
                 'Caja de cambios': 'Automático',
                 'Combustible': 'Gasolina',
@@ -165,7 +166,7 @@ function mostrarDetalles(autoId) {
                 'Volumen del maletero': '430 litros',
                 'Aceleración (0-100km/h)': '4.9 segundos',
                 'Velocidad Máxima': '250 km/h',
-                'Color': 'Rojo'
+                'Color': 'Azul'
             }
         },
         {
@@ -296,4 +297,8 @@ function cerrarDetalles() {
     if (detallesAutoContainer) {
         detallesAutoContainer.remove();
     }
+}
+
+function rentarAuto(autoId) {
+    window.location.href = `rentaauto.html?autoId=${autoId}`;
 }
