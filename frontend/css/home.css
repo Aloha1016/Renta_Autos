@@ -152,3 +152,110 @@ p {
         max-width: 20%;
     }
 }
+
+.filtros {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.filtros label {
+    margin: 0 10px;
+}
+
+.catalogo-autos {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #fff;
+}
+
+.grid-autos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 800px; /* Limitar el ancho máximo */
+    margin: 0 auto; /* Centrar el catálogo */
+}
+
+.tarjeta-auto {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 10px;
+    width: 250px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tarjeta-auto:hover {
+    transform: scale(1.05);
+}
+
+.tarjeta-auto img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.tarjeta-auto h3 {
+    font-size: 1.2em;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.tarjeta-auto p {
+    font-size: 1em;
+    color: #555;
+    text-align: center;
+}
+
+.tarjeta-auto button {
+    padding: 10px 20px;
+    background-color: #d32f2f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.tarjeta-auto button:hover {
+    background-color: #b71c1c;
+}
+
+.detalles-auto {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.contenido-detalles-auto {
+    background: #fff;
+    padding: 20px;
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.detalles-auto img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.especificaciones-auto, .caracteristicas-auto {
+    text-align: left;
+    margin-top: 20px;
+}

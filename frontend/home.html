@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drivoxe</title>
     <link rel="stylesheet" href="./css/home.css">
+    <script defer src="./js/catalogo.js"></script>
 </head>
 <body>
 
@@ -28,5 +29,31 @@
             <a href="reserva.html" class="btn">Reserva Ahora</a>
         </div>
     </section>
+
+    <section class="filtros">
+        <label for="filtroCaja">Caja de cambios:</label>
+        <select id="filtroCaja">
+            <option value="Todos">Todos</option>
+            <option value="Automático">Automático</option>
+            <option value="Manual">Manual</option>
+        </select>
+        
+        <label for="filtroColor">Color:</label>
+        <select id="filtroColor">
+            <option value="Todos">Todos</option>
+            <option value="Rojo">Rojo</option>
+            <option value="Blanco">Blanco</option>
+            <option value="Azul">Azul</option>
+            <option value="Negro">Negro</option>
+            <option value="Verde">Verde</option>
+            <option value="Gris">Gris</option>
+        </select>
+    </section>
+
+    <section class="catalogo-autos">
+        <h2>Nuestra Flota Impresionante</h2>
+        <div class="grid-autos" id="gridAutos"></div>
+    </section>
+
 </body>
 </html>
