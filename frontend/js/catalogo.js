@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
             id: 5,
             nombre: 'SUZUKI JIMNY',
             imagen: 'SUZUKI_JIMNY.jpg',
-            precio: 40,
+            precio: 60,
             especificaciones: {
                 'Caja de cambios': 'Manual',
                 'Combustible': 'Gasolina',
@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
             id: 6,
             nombre: 'MAZDA MAZDA6',
             imagen: 'MAZDA_MAZDA6.jpg',
-            precio: 60,
+            precio: 80,
             especificaciones: {
                 'Caja de cambios': 'Automático',
                 'Combustible': 'Gasolina',
@@ -91,54 +91,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 'Aceleración (0-100km/h)': '10 segundos',
                 'Velocidad Máxima': '208 km/h',
                 'Color': 'Rojo'
-            }
-        },
-        {
-            id: 7,
-            nombre: 'FIAT TIPO',
-            imagen: 'FIAT_TIPO.jpg',
-            precio: 35,
-            especificaciones: {
-                'Caja de cambios': 'Manual',
-                'Combustible': 'Diésel',
-                'Potencia máxima': '130 cv',
-                'Tracción': 'Delantera (FWD)',
-                'Volumen del maletero': '440 litros',
-                'Aceleración (0-100km/h)': '9.8 segundos',
-                'Velocidad Máxima': '208 km/h',
-                'Color': 'Gris'
-            }
-        },
-        {
-            id: 8,
-            nombre: 'FORD FOCUS',
-            imagen: 'FORD_FOCUS.jpg',
-            precio: 55,
-            especificaciones: {
-                'Caja de cambios': 'Manual',
-                'Combustible': 'Gasolina',
-                'Potencia máxima': '125 cv',
-                'Tracción': 'Delantera (FWD)',
-                'Volumen del maletero': '480 litros',
-                'Aceleración (0-100km/h)': '10.3 segundos',
-                'Velocidad Máxima': '198 km/h',
-                'Color': 'Azul'
-            }
-        },
-        {
-            id: 9,
-            nombre: 'PEUGEOT 3008 HYBRID',
-            imagen: 'PEUGEOT_3008_HYBRID.jpg',
-            precio: 85,
-            especificaciones: {
-                'Caja de cambios': 'Automático',
-                'Combustible': 'Gasolina',
-                'Potencia máxima': '136 cv',
-                'Tracción': 'Delantera (FWD)',
-                'Volumen del maletero': '520 litros',
-                'Aceleración (0-100km/h)': '10.3 segundos',
-                'Velocidad Máxima': '201 km/h',
-                'Color': 'Azul'
             }
         }
     ];
@@ -164,8 +116,10 @@ document.addEventListener('DOMContentLoaded', () => {
             tarjetaAuto.innerHTML = `
                 <img src="./assets/${auto.imagen}" alt="${auto.nombre}">
                 <h3>${auto.nombre}</h3>
-                <p>Empieza en $${auto.precio}/day</p>
-                <button onclick="mostrarDetalles(${auto.id})">Rent</button>
+                <div class="precio-boton">
+                    <p>Empieza en $${auto.precio}/day</p>
+                    <button onclick="mostrarDetalles(${auto.id})">Rent</button>
+                </div>
             `;
             gridAutos.appendChild(tarjetaAuto);
         });
@@ -196,13 +150,13 @@ function mostrarDetalles(autoId) {
                 'Potencia CV (KW) / rpm': '150 (110) / 5000 - 6000',
                 'Par máximo Nm (Kgfm) / rpm': '250 (26) / 1500 - 3500',
                 'Caja de cambios': 'Manual',
-                'Color': 'Rojo'
+                'Color': 'Blanco'
             }
         },
         {
             id: 2,
-            nombre: 'BMW SERIE 2',
-            imagen: 'BMW_SERIE_2.jpg',
+            nombre: 'BMW SERIE 7',
+            imagen: 'BMW_SERIE_7.jpg',
             especificaciones: {
                 'Caja de cambios': 'Automático',
                 'Combustible': 'Gasolina',
@@ -211,7 +165,7 @@ function mostrarDetalles(autoId) {
                 'Volumen del maletero': '430 litros',
                 'Aceleración (0-100km/h)': '4.9 segundos',
                 'Velocidad Máxima': '250 km/h',
-                'Color': 'Blanco'
+                'Color': 'Rojo'
             }
         },
         {
@@ -226,7 +180,7 @@ function mostrarDetalles(autoId) {
                 'Volumen del maletero': '425 litros',
                 'Aceleración (0-100km/h)': '10.6 segundos',
                 'Velocidad Máxima': '210 km/h',
-                'Color': 'Azul'
+                'Color': 'Gris'
             }
         },
         {
@@ -241,7 +195,7 @@ function mostrarDetalles(autoId) {
                 'Volumen del maletero': '390 litros',
                 'Aceleración (0-100km/h)': '4.9 segundos',
                 'Velocidad Máxima': '250 km/h',
-                'Color': 'Negro'
+                'Color': 'Rojo'
             }
         },
         {
@@ -269,7 +223,7 @@ function mostrarDetalles(autoId) {
                 'Volumen del maletero': '480 litros',
                 'Aceleración (0-100km/h)': '10 segundos',
                 'Velocidad Máxima': '208 km/h',
-                'Color': 'Gris'
+                'Color': 'Rojo'
             }
         },
         {
@@ -316,7 +270,7 @@ function mostrarDetalles(autoId) {
                 'Velocidad Máxima': '201 km/h',
                 'Color': 'Azul'
             }
-        }
+        },
     ];
 
     const auto = autos.find(auto => auto.id === autoId);
