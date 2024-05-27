@@ -75,7 +75,7 @@
         }
 
         public function setEstado ($estado) {
-            $this->direccion = $estado;
+            $this->estado = $estado;
         }
 
         public function getMunicipio () {
@@ -83,7 +83,7 @@
         }
 
         public function setMunicipio ($municipio) {
-            $this->direccion = $municipio;
+            $this->municipio = $municipio;
         }
 
         public function getDireccion () {
