@@ -171,22 +171,32 @@ p {
 }
 
 .grid-autos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* Ajuste inicial para pantallas pequeñas */
     gap: 20px;
-    max-width: 800px; /* Limitar el ancho máximo */
+    max-width: 1200px;
     margin: 0 auto; /* Centrar el catálogo */
 }
 
+@media (min-width: 768px) {
+    .grid-autos {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas para pantallas medianas */
+    }
+}
+
+@media (min-width: 992px) {
+    .grid-autos {
+        grid-template-columns: repeat(3, 1fr); /* 3 columnas para pantallas grandes */
+    }
+}
+
 .tarjeta-auto {
-    border: 1px solid #4a0202;
+    border: 1px solid #000000;
     padding: 20px;
     margin: 10px;
-    width: 250px;
-    background: linear-gradient(to bottom, #ef9b9b, #e98585);
+    background: linear-gradient(to bottom, #fff, #f7f7f7);
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(86, 2, 2, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s, color 0.3s;
     display: flex;
     flex-direction: column;
@@ -196,10 +206,10 @@ p {
 }
 
 .tarjeta-auto:hover {
-    transform: translateY(-20px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    background-color: #d32f2f;
-    color: #fff;
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(244, 0, 0, 0.2);
+    background-color: #7e0101;
+    color: #000000;
 }
 
 .tarjeta-auto img {
@@ -232,7 +242,7 @@ p {
 .tarjeta-auto button {
     padding: 10px 20px;
     background-color: #d32f2f;
-    color: rgb(12, 0, 0);
+    color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -240,8 +250,8 @@ p {
 }
 
 .tarjeta-auto button:hover {
-    background-color: #b71c1c;
-    color: #fff;
+    background-color: #911212;
+    color: #080000;
 }
 
 .detalles-auto {
