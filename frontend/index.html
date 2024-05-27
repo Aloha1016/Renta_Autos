@@ -1,28 +1,218 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página con Carrusel de Imágenes</title>
-    <link rel="stylesheet" href="./css/index.css">
-</head>
-<body>
-    <header>
-        <div class="logo">
-            <img src="./assets/logo.png" alt="Logo">
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="bg-white text-zinc-900">
+      <header class="flex justify-between items-center p-6 px-20">
+        <img src="../frontend/assets/logo.png" alt="" width="200px">
+        <!-- <nav class="space-x-4">
+          <a href="#" class="hover:text-red-500">Service</a>
+          <a href="#" class="hover:text-red-500">Cars</a>
+          <a href="#" class="hover:text-red-500">Pricing</a>
+          <a href="#" class="hover:text-red-500">About</a>
+        </nav> -->
+        <div class="space-x-4">
+          <a href="../frontend/registrar.html" class="text-zinc-500 hover:text-red-500">Registrarse</a>
+          <a href="../frontend/iniciarsesion.html" class="bg-red-500 text-white px-4 py-2 rounded">Login</a
+          >
         </div>
-        <div class="auth-buttons">
-            <button class="Registrarse" onclick="window.location.href='registrar.html'">Registrarse</button>
-            <button class="IniciarSesion" onclick="window.location.href='iniciarsesion.html'">Iniciar Sesión</button>
+      </header>
+      <section
+        class="text-center py-20 bg-gradient-to-r from-pink-500 to-red-500 text-white"
+      >
+        <h1 class="text-4xl font-bold">Como nosotros no hay dos</h1>
+        <p class="mt-4">
+          Experimente la máxima libertad de elección con Renta de Carros UG. 
+					<br>
+					Adapte su aventura eligiendo entre nuestra flota premium de vehículos.
+        </p>
+        <button class="mt-6 bg-white text-red-500 px-6 py-3 rounded">
+          Iniciar Prueba
+        </button>
+        <div class="mt-10">
+          <img
+            src="../frontend/assets/img-index.png"
+						width="600px"
+						height="400px"
+            class="mx-auto"
+            crossorigin="anonymous"
+          />
         </div>
-    </header>
-    <main>
-        <div class="carousel">
-            <img src="./assets/imagen1.jpg" class="carousel-image active" alt="Imagen 1">
-            <img src="./assets/imagen2.jpg" class="carousel-image" alt="Imagen 2">
-            <img src="./assets/imagen3.jpg" class="carousel-image" alt="Imagen 3">
+      </section>
+      <section class="py-20">
+        <h2 class="text-center text-3xl font-bold">Our Impressive Fleet</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10 px-6">
+          <div class="bg-white p-6 rounded-lg shadow">
+            <img
+              src="https://placehold.co/200x150"
+              alt="Car 1"
+              class="w-full"
+              crossorigin="anonymous"
+            />
+            <h3 class="mt-4 text-xl font-bold">Horizon Mirage Convertible</h3>
+            <p class="mt-2">Starting at $49/day</p>
+            <button class="mt-4 bg-red-500 text-white px-4 py-2 rounded">
+              Rent
+            </button>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow">
+            <img
+              src="https://placehold.co/200x150"
+              alt="Car 2"
+              class="w-full"
+              crossorigin="anonymous"
+            />
+            <h3 class="mt-4 text-xl font-bold">Zephyr A4 Stratos</h3>
+            <p class="mt-2">Starting at $79/day</p>
+            <button class="mt-4 bg-red-500 text-white px-4 py-2 rounded">
+              Rent
+            </button>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow">
+            <img
+              src="https://placehold.co/200x150"
+              alt="Car 3"
+              class="w-full"
+              crossorigin="anonymous"
+            />
+            <h3 class="mt-4 text-xl font-bold">Aurora X5 Nebula</h3>
+            <p class="mt-2">Starting at $99/day</p>
+            <button class="mt-4 bg-red-500 text-white px-4 py-2 rounded">
+              Rent
+            </button>
+          </div>
         </div>
-    </main>
-    <script src="./js/index.js"></script>
-</body>
+      </section>
+      <section class="py-20 bg-zinc-100">
+        <h2 class="text-center text-3xl font-bold">¿Porque elegirnos?</h2>
+        <div
+          class="flex flex-col md:flex-row justify-around items-center mt-10 px-6"
+        >
+          <div class="text-center md:w-1/3 p-4">
+            <img
+              src="../frontend/assets/icon-book.png"
+              height="200px"
+							width="100px"
+              class="mx-auto"
+              crossorigin="anonymous"
+            />
+            <h3 class="mt-4 text-xl font-bold">Fácil Reservación</h3>
+            <p class="mt-2">Reserve su auto en unos cuantos clics.</p>
+          </div>
+          <div class="text-center md:w-1/3 p-4">
+            <img
+              src="../frontend/assets/icon-booking.png"
+              height="200px"
+							width="100px"
+              alt="Quality & Variety"
+              class="mx-auto"
+              crossorigin="anonymous"
+            />
+            <h3 class="mt-4 text-xl font-bold">Calidad y Variedad</h3>
+            <p class="mt-2">Explore nuestra diversa gama de vehículos premium.</p>
+          </div>
+          <div class="text-center md:w-1/3 p-4">
+            <img
+              src="../frontend/assets/icon-low-cost.png"
+              height="200px"
+							width="100px"
+              alt="Affordable Rates"
+              class="mx-auto"
+              crossorigin="anonymous"
+            />
+            <h3 class="mt-4 text-xl font-bold">Tarifas asequibles</h3>
+            <p class="mt-2">Precios competitivos sin tarifas ocultas.</p>
+          </div>
+        </div>
+      </section>
+      <section class="py-20">
+        <h2 class="text-center text-3xl font-bold">What Our Customers Say</h2>
+        <div class="mt-10 px-6">
+          <p class="text-center text-xl">
+            "My Drivoxe experience was nothing short of incredible. The pristine
+            car and impeccable service made my trip unforgettable. I'll be back
+            for more."
+          </p>
+          <div class="text-center mt-4">
+            <img
+              src="https://placehold.co/50x50"
+              alt="Customer"
+              class="mx-auto rounded-full"
+              crossorigin="anonymous"
+            />
+            <p class="mt-2">Aleea Thompson</p>
+          </div>
+        </div>
+      </section>
+      <section class="py-20 bg-zinc-100">
+        <h2 class="text-center text-3xl font-bold">
+          Simple Steps to Get the Car
+        </h2>
+        <div
+          class="flex flex-col md:flex-row justify-around items-center mt-10 px-6"
+        >
+          <div class="text-center md:w-1/4 p-4">
+            <img
+              src="https://placehold.co/100x100"
+              alt="Select"
+              class="mx-auto"
+              crossorigin="anonymous"
+            />
+            <h3 class="mt-4 text-xl font-bold">Select</h3>
+            <p class="mt-2">Choose your desired car from our fleet.</p>
+          </div>
+          <div class="text-center md:w-1/4 p-4">
+            <img
+              src="https://placehold.co/100x100"
+              alt="Book"
+              class="mx-auto"
+              crossorigin="anonymous"
+            />
+            <h3 class="mt-4 text-xl font-bold">Book</h3>
+            <p class="mt-2">Reserve your car online or through our app.</p>
+          </div>
+          <div class="text-center md:w-1/4 p-4">
+            <img
+              src="https://placehold.co/100x100"
+              alt="Drive"
+              class="mx-auto"
+              crossorigin="anonymous"
+            />
+            <h3 class="mt-4 text-xl font-bold">Drive</h3>
+            <p class="mt-2">Pick up your car and hit the road.</p>
+          </div>
+          <div class="text-center md:w-1/4 p-4">
+            <img
+              src="https://placehold.co/100x100"
+              alt="Return"
+              class="mx-auto"
+              crossorigin="anonymous"
+            />
+            <h3 class="mt-4 text-xl font-bold">Return</h3>
+            <p class="mt-2">
+              Bring the car back at the end of your rental period.
+            </p>
+          </div>
+        </div>
+      </section>
+      <footer class="bg-zinc-900 text-white py-10">
+        <div class="flex flex-col md:flex-row justify-around items-center px-6">
+          <div class="text-center md:w-1/3 p-4">
+            <h3 class="text-xl font-bold">Ready to Go?</h3>
+            <p class="mt-2">
+              Book your car wherever you are and ride with us now!
+            </p>
+            <div class="mt-4">
+              <button class="bg-white text-zinc-900 px-4 py-2 rounded">
+                Get it on Google Play
+              </button>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
 </html>
