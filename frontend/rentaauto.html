@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanguard CX2 Convertible</title>
+    <link rel="stylesheet" href="./css/rentaauto.css">
+</head>
+<body>
+    <div class="container">
+        <div class="car-details">
+            <div class="car-images">
+                <img id="main-image" src="./assets/versa/car-front-rojo.png" alt="Vanguard CX2 Convertible">
+                <div class="thumbnail-images">
+                    <img src="./assets/versa/car-front.png" alt="Front view" onclick="changeImage('./assets/versa/car-front.png')">
+                    <img src="./assets/versa/car-back.png" alt="Side view" onclick="changeImage('./assets/versa/car-back.png')">
+                    <img src="./assets/versa/car-car.png" alt="Back view" onclick="changeImage('./assets/versa/car-car.png')">
+                </div>
+            </div>
+            <div class="car-info">
+                <h1>Vanguard CX2 Convertible</h1>
+                <p class="price">Empieza en <strong>$59/dia</strong></p>
+                <p class="description">
+                    Elevate your journey with the Ford Mustang Convertible, the epitome of American muscle and open-air excitement. Feel the wind in your hair as you experience the power, style, and iconic allure of this classic masterpiece. Cruise with confidence, top down.
+                </p>
+                <div class="specifications">
+                    <h2>Specifications</h2>
+                    <ul>
+                        <li>Convertible</li>
+                        <li>5.0-liter V8</li>
+                        <li>450 HP</li>
+                        <li>Automatic</li>
+                        <li>4 passengers</li>
+                    </ul>
+                </div>
+                <div class="booking">
+                    <label for="start-date">Start Date:</label>
+                    <input type="date" id="start-date" name="start-date">
+                    <label for="end-date">End Date:</label>
+                    <input type="date" id="end-date" name="end-date">
+                    <button onclick="bookNow()">Book Now</button>
+                    <p id="error-message" style="color: red; display: none;">Please select a range of at least 3 days.</p>
+                </div>
+                <div class="color-options">
+                    <h3>In color</h3>
+                    <div class="colors">
+                        <span class="color red" onclick="changeColor('red')"></span>
+                        <span class="color white" onclick="changeColor('white')"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/rentaauto.js"></script>
+</body>
+</html>

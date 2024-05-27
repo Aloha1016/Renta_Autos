@@ -3,85 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Renta de Autos</title>
-    <link rel="stylesheet" href="./css/home.css"> 
+    <title>Drivoxe</title>
+    <link rel="stylesheet" href="./css/home.css">
+    <script defer src="./js/catalogo.js"></script>
 </head>
 <body>
-    <header>
-        <h1>AQUI VA EL LOGO</h1>
-        <nav>
-            <ul>
-                <li><a href="#home">Inicio</a></li>
-                <li><a href="#cars">Autos</a></li>
-                <li><a href="#booking">Reserva</a></li>
-                <li><a href="#contact">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <section id="home">
-        <h2>Bienvenido a Nuestro Servicio de Renta de Autos</h2>
-        <p>Ofrecemos una amplia variedad de autos para satisfacer todas tus necesidades de viaje.</p>
-    </section>
-
-    <section id="cars">
-        <h2>Nuestros Autos</h2>
-        <div class="car-list">
-            <div class="car">
-                <h3>Sedan</h3>
-                <img src="./assets/carro1.png" alt="Sedan">
-                <p>Descripción del sedan.</p>
+    <section class="hero">
+        <div class="container">
+            <div class="text-car-container">
+                <h1>¿Por qué elegirnos?</h1>
+                <p>Únase a nuestros clientes satisfechos que confían en nosotros para sus viajes. Servimos con un montón de valores que se pueden sentir directamente.</p>
             </div>
-            <div class="car">
-                <h3>SUV</h3>
-                <img src="./assets/carro2.png" alt="SUV">
-                <p>Descripción del SUV.</p>
+            <div class="car-container">
+                <img src="./assets/imagen_car_home.png" alt="Car">
             </div>
-            <div class="car">
-                <h3>Deportivo</h3>
-                <img src="./assets/carro3.png" alt="Deportivo">
-                <p>Descripción del deportivo.</p>
+            <div class="features-container">
+                <div class="feature easy-booking">Reserva fácil<br><span>Reserva tu coche en unos pocos clics.</span></div>
+                <div class="feature quality-variety">Calidad y variedad<br><span>Explora nuestra diversa gama de vehículos premium.</span></div>
+                <div class="feature affordable-rates">Tarifas asequibles<br><span>Disfrute de precios competitivos sin cargos ocultos.</span></div>
             </div>
-            
+        </div>
+        <div class="cta">
+            <h2>¿Listo para reservar?</h2>
+            <a href="reserva.html" class="btn">Reserva Ahora</a>
         </div>
     </section>
 
-    <section id="booking">
-        <h2>Reserva tu Auto</h2>
-        <form action="submit_reservation.php" method="post">
-            <label for="name">Nombre:</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="email">Correo Electrónico:</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="car-type">Tipo de Auto:</label>
-            <select id="car-type" name="car-type">
-                <option value="sedan">Sedan</option>
-                <option value="suv">SUV</option>
-                <option value="deportivo">Deportivo</option>
-                
-            </select>
-
-            <label for="pickup-date">Fecha de Recogida:</label>
-            <input type="date" id="pickup-date" name="pickup-date" required>
-
-            <label for="return-date">Fecha de Devolución:</label>
-            <input type="date" id="return-date" name="return-date" required>
-
-            <button type="submit">Reservar</button>
-        </form>
+    <section class="filtros">
+        <label for="filtroCaja">Caja de cambios:</label>
+        <select id="filtroCaja">
+            <option value="Todos">Todos</option>
+            <option value="Automático">Automático</option>
+            <option value="Manual">Manual</option>
+        </select>
+        
+        <label for="filtroColor">Color:</label>
+        <select id="filtroColor">
+            <option value="Todos">Todos</option>
+            <option value="Rojo">Rojo</option>
+            <option value="Blanco">Blanco</option>
+            <option value="Azul">Azul</option>
+            <option value="Negro">Negro</option>
+            <option value="Verde">Verde</option>
+            <option value="Gris">Gris</option>
+        </select>
     </section>
 
-    <section id="contact">
-        <h2>Contacto</h2>
-        <p>Si tienes alguna pregunta, no dudes en contactarnos:</p>
-        <p>Teléfono: (123) 456-7890</p>
-        <p>Correo Electrónico: info@rentadeautos.com</p>
+    <section class="catalogo-autos">
+        <h2>Nuestra Flota Impresionante</h2>
+        <div class="grid-autos" id="gridAutos"></div>
     </section>
 
-    <footer>
-        <p>&copy; 2024 Renta de Autos. Todos los derechos reservados.</p>
-    </footer>
 </body>
 </html>
