@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Georgia&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Georgia', serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
@@ -169,30 +171,45 @@ p {
 }
 
 .grid-autos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* Ajuste inicial para pantallas pequeñas */
     gap: 20px;
-    max-width: 800px; /* Limitar el ancho máximo */
+    max-width: 1200px;
     margin: 0 auto; /* Centrar el catálogo */
 }
 
+@media (min-width: 768px) {
+    .grid-autos {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas para pantallas medianas */
+    }
+}
+
+@media (min-width: 992px) {
+    .grid-autos {
+        grid-template-columns: repeat(3, 1fr); /* 3 columnas para pantallas grandes */
+    }
+}
+
 .tarjeta-auto {
-    border: 1px solid #ccc;
+    border: 1px solid #000000;
     padding: 20px;
     margin: 10px;
-    width: 250px;
-    background-color: #fff;
+    background: linear-gradient(to bottom, #fff, #f7f7f7);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s, color 0.3s;
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
+    color: #333;
 }
 
 .tarjeta-auto:hover {
-    transform: scale(1.05);
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(244, 0, 0, 0.2);
+    background-color: #7e0101;
+    color: #000000;
 }
 
 .tarjeta-auto img {
@@ -204,13 +221,22 @@ p {
 .tarjeta-auto h3 {
     font-size: 1.2em;
     margin: 10px 0;
-    text-align: center;
+    text-align: left;
+    color: inherit;
 }
 
 .tarjeta-auto p {
     font-size: 1em;
-    color: #555;
-    text-align: center;
+    color: inherit;
+    text-align: left;
+}
+
+.tarjeta-auto .precio-boton {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    margin-top: auto;
 }
 
 .tarjeta-auto button {
@@ -220,11 +246,12 @@ p {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .tarjeta-auto button:hover {
-    background-color: #b71c1c;
+    background-color: #911212;
+    color: #080000;
 }
 
 .detalles-auto {
