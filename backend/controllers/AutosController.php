@@ -1,5 +1,5 @@
 <?php
-    require_once '../backend/services/AutoService.php';
+    require_once '../backend/services/AutosService.php';
 
     class AutoController {
         private $autoService;
