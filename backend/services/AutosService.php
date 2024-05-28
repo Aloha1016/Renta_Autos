@@ -3,7 +3,7 @@
     require_once '../backend/db/Database.php';
     require_once '../backend/interfaces/AutosInterface.php';
 
-    class AutosService implements AutosInterface {
+    class AutoService implements AutosInterface {
         private $db;
 
         public function __construct ($db) {

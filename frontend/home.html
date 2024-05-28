@@ -30,12 +30,19 @@
         </div>
     </section>
 
+    <section id="catalo-autos" class="catalo-autos">
+        <h2>Nuestra Flota Impresionante</h2>
+    </section>
+
     <section class="filtros">
-        <label for="filtroCaja">Caja de cambios:</label>
-        <select id="filtroCaja">
+        <label for="filtroMarca">Marca:</label>
+        <select id="filtroMarca">
             <option value="Todos">Todos</option>
-            <option value="Automático">Automático</option>
-            <option value="Manual">Manual</option>
+            <option value="Toyota">Toyota</option>
+            <option value="Honda">Honda</option>
+            <option value="Ford">Ford</option>
+            <option value="Nissan">Nissan</option>
+            <option value="Chevrolet">Chevrolet</option>
         </select>
         
         <label for="filtroColor">Color:</label>
@@ -45,14 +52,20 @@
             <option value="Blanco">Blanco</option>
             <option value="Azul">Azul</option>
             <option value="Negro">Negro</option>
-            <option value="Verde">Verde</option>
             <option value="Gris">Gris</option>
+        </select>
+
+        <label for="filtroPasajeros">Número de pasajeros:</label>
+        <select id="filtroPasajeros">
+            <option value="Todos">Todos</option>
+            <option value="4 pasajeros">4</option>
+            <option value="5 pasajeros">5</option>
         </select>
     </section>
 
     <section id="catalogo-autos" class="catalogo-autos">
-        <h2>Nuestra Flota Impresionante</h2>
         <div class="grid-autos" id="gridAutos"></div>
+        <div class="paginacion" id="paginacion"></div>
     </section>
 
 </body>
