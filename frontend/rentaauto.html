@@ -3,47 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vanguard CX2 Convertible</title>
+    <title>Detalles del Auto</title>
     <link rel="stylesheet" href="./css/rentaauto.css">
 </head>
 <body>
     <div class="container">
-        <div class="car-details">
-            <div class="car-images">
-                <img id="main-image" src="./assets/versa/car-front-rojo.png" alt="Vanguard CX2 Convertible">
-                <div class="thumbnail-images">
-                    <img src="./assets/versa/car-front.png" alt="Front view" onclick="changeImage('./assets/versa/car-front.png')">
-                    <img src="./assets/versa/car-back.png" alt="Side view" onclick="changeImage('./assets/versa/car-back.png')">
-                    <img src="./assets/versa/car-car.png" alt="Back view" onclick="changeImage('./assets/versa/car-car.png')">
-                </div>
-            </div>
-            <div class="car-info">
-                <h1>Versa 2021</h1>
-                <p class="price">Empieza en <strong>$50/dia</strong></p>
-                <p class="description">
-                    El Totalmente Nuevo Nissan Versa llegó para cambiar las reglas de la categoría. Con un nuevo enfoque que integra más seguridad, más tecnología y más diseño, este auto reta lo establecido. Su línea de diseño audaz y atractiva está destinada a cautivar las miradas en cada camino que recorras.
-                </p>
-                <div class="specifications">
-                    <h2>Especificaciones</h2>
-                    <ul>
-                        <li>Motor: 1.6 litros.</li>
-                        <li>Transmisión: Automática Xtronic CVT.</li>
-                        <li>Pasajeros: Hasta cinco.</li>
-                        <li>Seguridad: Control de estabilidad, ABS y bolsas de aire.</li>
-                        <li>Consumo: Aproximadamente 32 mpg en ciudad y 40 mpg en carretera.</li>
-                    </ul>
-                </div>
-                <div class="booking">
-                    <label for="start-date">Fecha de Inicio:</label>
-                    <input type="date" id="start-date" name="start-date">
-                    <label for="end-date">Fecha de finalización:</label>
-                    <input type="date" id="end-date" name="end-date">
-                    <button onclick="bookNow()">Renta Ahora</button>
-                    <p id="error-message" style="color: red; display: none;">Please select a range of at least 3 days.</p>
-                </div>
-            </div>
-        </div>
+        <div id="autoDetails" class="car-details"></div>
     </div>
-    <script src="./js/rentaauto.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const params = new URLSearchParams(window.location.search);
+            const autoId = params.get('id');
+            if (autoId) {
+                const response = await fetch(`../backend/index.php?accion=getAutoById&id=${autoId}`);
+                const data = await response.json();
+                if (data.success) {
+                    const auto = data.Auto;
+                    const autoDetails = document.getElementById('autoDetails');
+                    autoDetails.innerHTML = `
+                        <div class="car-images">
+                            <img id="main-image" src="./assets/${auto.Aut_Modelo}/car-front.png" alt="${auto.Aut_Modelo}">
+                            <div class="thumbnail-images">
+                                <img src="./assets/${auto.Aut_Modelo}/car-front.png" alt="Front view" onclick="changeImage('./assets/${auto.Aut_Modelo}/car-front.png')">
+                                <img src="./assets/${auto.Aut_Modelo}/car-car.png" alt="Side view" onclick="changeImage('./assets/${auto.Aut_Modelo}/car-car.png')">
+                                <img src="./assets/${auto.Aut_Modelo}/car-back.png" alt="Back view" onclick="changeImage('./assets/${auto.Aut_Modelo}/car-back.png')">
+                            </div>
+                        </div>
+                        <div class="car-info">
+                            <h1>${auto.Aut_Marca} ${auto.Aut_Modelo}</h1>
+                            <p class="price">Empieza en <strong>$${auto.Aut_Costo_Dia}/día</strong></p>
+                            <p class="description">${auto.Aut_Comentario}</p>
+                            <div class="specifications">
+                                <h2>Especificaciones</h2>
+                                <ul>
+                                    <li>Motor: ${auto.Aut_Motor}</li>
+                                    <li>Transmisión: ${auto.Aut_Transmision}</li>
+                                    <li>Pasajeros: ${auto.Aut_Pasajeros}</li>
+                                    <li>Color: ${auto.Aut_Color}</li>
+                                </ul>
+                            </div>
+                            <div class="booking">
+                                <label for="start-date">Fecha de Inicio:</label>
+                                <input type="date" id="start-date" name="start-date">
+                                <label for="end-date">Fecha de finalización:</label>
+                                <input type="date" id="end-date" name="end-date">
+                                <button onclick="bookNow()">Renta Ahora</button>
+                                <p id="error-message" style="color: red; display: none;">Please select a range of at least 3 days.</p>
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    console.error(data.message);
+                }
+            } else {
+                console.error('No auto ID found in URL');
+            }
+        });
+
+        function changeImage(src) {
+            document.getElementById('main-image').src = src;
+        }
+
+        function bookNow() {
+            const startDate = document.getElementById('start-date').value;
+            const endDate = document.getElementById('end-date').value;
+            const errorMessage = document.getElementById('error-message');
+            const start = new Date(startDate);
+            const end = new Date(endDate);
+            const diffTime = Math.abs(end - start);
+            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+            if (diffDays < 3) {
+                errorMessage.style.display = 'block';
+            } else {
+                errorMessage.style.display = 'none';
+                alert('Booking successful!');
+            }
+        }
+    </script>
 </body>
 </html>
