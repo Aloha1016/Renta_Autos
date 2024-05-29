@@ -68,5 +68,115 @@
         <div class="paginacion" id="paginacion"></div>
     </section>
 
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="#" onclick="openModal('faqModal')">Preguntas Frecuentes</a>
+                <a href="#" onclick="openModal('privacyModal')">Política de Privacidad</a>
+                <a href="#" onclick="openModal('termsModal')">Términos y Condiciones</a>
+            </div>
+            <div class="footer-social">
+                <a href="https://www.facebook.com/groups/247998239069580?locale=es_LA"><img src="./assets/SocialMedia/Facebook.png" alt="Facebook"></a>
+                <a href="https://x.com/BudgetCarMexico"><img src="./assets/SocialMedia/X.jpeg" alt="Twitter"></a>
+                <a href="https://www.instagram.com/aerentals.mx/"><img src="./assets/SocialMedia/Instagram.png" alt="Instagram"></a>
+            </div>
+            <p>&copy; 2024 Drivoxe. Todos los derechos reservados.</p>
+        </div>
+    </footer>    
+
+    <div id="faqModal" class="modal faq-modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('faqModal')">&times;</span>
+            <h2>Preguntas Frecuentes</h2>
+            <button class="accordion">¿Cómo reservo un coche con Drivoxe?</button>
+            <div class="panel">
+                <p>Reservar con Drivoxe es fácil. Visite nuestro sitio web o aplicación, seleccione su coche preferido, establezca sus fechas y complete la reserva en unos pocos clics.</p>
+            </div>
+            <button class="accordion">¿Qué sucede si me excedo de días con respecto a los acordados?</button>
+            <div class="panel">
+                <p>Se cobrará una tarifa extra en relación con los días que se haya excedido.</p>
+            </div>
+            <button class="accordion">¿Cuáles son los requisitos de edad para alquilar un coche?</button>
+            <div class="panel">
+                <p>Debe tener al menos [edad mínima] años y poseer una licencia de conducir válida.</p>
+            </div>
+            <button class="accordion">¿Hay cargos ocultos en el costo del alquiler?</button>
+            <div class="panel">
+                <p>No, nuestras tarifas son transparentes y no tienen cargos ocultos.</p>
+            </div>
+            <button class="accordion">¿Cómo puedo extender mi período de alquiler?</button>
+            <div class="panel">
+                <p>Para extender su período de alquiler, contáctenos y haremos los arreglos necesarios según la disponibilidad del vehículo.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="privacyModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('privacyModal')">&times;</span>
+            <h2>Política de Privacidad</h2>
+            <p><strong>1. Introducción</strong><br>
+            En [Nombre de la Empresa], valoramos su privacidad y estamos comprometidos a proteger su información personal. Esta Política de Privacidad describe cómo recopilamos, usamos y protegemos su información cuando utiliza nuestros servicios y nuestro sitio web.</p>
+            
+            <p><strong>2. Información que Recopilamos</strong><br>
+            <strong>Información Personal:</strong> Nombre, dirección, correo electrónico, número de teléfono, información de la licencia de conducir.<br>
+            <strong>Información de Pago:</strong> Datos de la tarjeta de crédito u otros métodos de pago.<br>
+            <strong>Información del Vehículo:</strong> Detalles del alquiler, historial de alquileres, preferencias del cliente.</p>
+            
+            <p><strong>3. Uso de la Información</strong><br>
+            <strong>Para Proveer Servicios:</strong> Utilizamos su información para procesar reservas, pagos y para proporcionarle los servicios solicitados.<br>
+            <strong>Comunicación:</strong> Podemos usar su información para comunicarnos con usted sobre su reserva, para enviar confirmaciones y para proporcionarle actualizaciones importantes.<br>
+            <strong>Marketing:</strong> Con su consentimiento, podemos usar su información para enviarle promociones y ofertas especiales.</p>
+            
+            <p><strong>4. Compartir Información</strong><br>
+            <strong>Con Terceros:</strong> No compartimos su información personal con terceros, excepto cuando sea necesario para proporcionar nuestros servicios (por ejemplo, procesamiento de pagos) o cuando lo exija la ley.<br>
+            <strong>Protección Legal:</strong> Podemos divulgar su información si creemos de buena fe que es necesario para cumplir con una obligación legal, proteger nuestros derechos, o investigar fraudes.</p>
+            
+            <p><strong>5. Seguridad de la Información</strong><br>
+            Implementamos medidas de seguridad técnicas y organizativas para proteger su información personal contra pérdida, uso indebido, y acceso no autorizado.</p>
+            
+            <p><strong>6. Sus Derechos</strong><br>
+            Usted tiene derecho a acceder, corregir, o eliminar su información personal. Para ejercer estos derechos, por favor contáctenos en [dirección de contacto].</p>
+            
+            <p><strong>7. Cambios a esta Política de Privacidad</strong><br>
+            Podemos actualizar esta Política de Privacidad ocasionalmente. Cualquier cambio será publicado en esta página con una nueva fecha de vigencia.</p>
+            
+            <p><strong>8. Contacto</strong><br>
+            Si tiene alguna pregunta sobre esta Política de Privacidad, por favor contáctenos en [dirección de correo electrónico] o [número de teléfono].</p>
+        </div>
+    </div>
+
+    <div id="termsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('termsModal')">&times;</span>
+            <h2>Términos y Condiciones</h2>
+            <p>Bienvenido a [Nombre de la Empresa]. Estos términos y condiciones ("Términos") regulan el uso de nuestro sitio web y los servicios de alquiler de vehículos proporcionados por [Nombre de la Empresa] ("nosotros", "nuestro"). Al acceder a nuestro sitio web y/o utilizar nuestros servicios, usted acepta cumplir y estar sujeto a estos Términos.</p>
+            
+            <h3>2. Servicios de Renta de Autos</h3>
+            <p><strong>Requisitos de Alquiler:</strong> Para alquilar un vehículo, debe tener al menos [edad mínima] años y poseer una licencia de conducir válida.</p>
+            <p><strong>Proceso de Reserva:</strong> Las reservas se pueden hacer en línea a través de nuestro sitio web o en persona en nuestras oficinas.</p>
+            <p><strong>Pagos y Depósitos:</strong> Se requiere un depósito de [cantidad] al momento de la reserva. El pago completo debe realizarse antes de recoger el vehículo.</p>
+            <p><strong>Política de Cancelación:</strong> Las cancelaciones deben hacerse al menos [número de días] días antes de la fecha de recogida para recibir un reembolso completo. Las cancelaciones hechas con menos de [número de días] días de antelación pueden estar sujetas a una tarifa de cancelación de [cantidad].</p>
+            
+            <h3>3. Uso del Vehículo</h3>
+            <p><strong>Condiciones del Vehículo:</strong> Los vehículos deben devolverse en las mismas condiciones en las que se alquilaron. El cliente es responsable de cualquier daño o pérdida durante el período de alquiler.</p>
+            <p><strong>Kilometraje y Combustible:</strong> [detalles sobre políticas de kilometraje y combustible].</p>
+            <p><strong>Prohibiciones:</strong> Está prohibido utilizar el vehículo para actividades ilegales, competencias, o para transportar materiales peligrosos.</p>
+            
+            <h3>4. Seguro y Responsabilidad</h3>
+            <p><strong>Cobertura de Seguro:</strong> Ofrecemos varias opciones de seguro. Por favor, revise nuestras opciones de seguro y seleccione la que mejor se adapte a sus necesidades.</p>
+            <p><strong>Responsabilidad del Cliente:</strong> El cliente es responsable de cualquier daño no cubierto por el seguro y de las multas o infracciones de tráfico incurridas durante el período de alquiler.</p>
+            
+            <h3>5. Limitación de Responsabilidad</h3>
+            <p>[Nombre de la Empresa] no será responsable por daños indirectos, incidentales o consecuentes derivados del uso de nuestros servicios de alquiler.</p>
+            
+            <h3>6. Modificaciones a los Términos</h3>
+            <p>Nos reservamos el derecho de modificar estos Términos en cualquier momento. Las modificaciones serán efectivas desde el momento de su publicación en nuestro sitio web.</p>
+            
+            <h3>7. Ley Aplicable y Jurisdicción</h3>
+            <p>Estos Términos se regirán e interpretarán de acuerdo con las leyes de [jurisdicción]. Cualquier disputa que surja en relación con estos Términos estará sujeta a la jurisdicción exclusiva de los tribunales de [jurisdicción].</p>    
+        </div>
+    </div>
+
 </body>
 </html>
