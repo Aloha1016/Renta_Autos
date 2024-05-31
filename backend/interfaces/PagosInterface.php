@@ -1,5 +1,5 @@
 <?php
-    interface UserInterface {
+    interface PagoInterface {
         public function registrarPago($pago);
     }
 ?>
