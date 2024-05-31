@@ -16,7 +16,7 @@
 
                 if (!empty($correo) && !empty($password)) {
                     $user = $this->userService->login($correo, $password);
-                    if($correo) {
+                    if($user) {
                         // redirigir a otra pagina
                         echo json_encode(array("success" => true, "message" => "Inicio Satisfactorio"));
                     } else {
