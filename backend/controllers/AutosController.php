@@ -1,12 +1,12 @@
 <?php
-    require_once '../backend/services/AutoService.php';
+    require_once '../backend/services/AutosService.php';
 
     class AutoController {
         private $autoService;
 
         public function __construct() {
             $db = (new Database())->getConnection();
-            $this->autoService = new AutoService($db);
+            $this->autoService = new AutosService($db);
         }
 
         public function obtenerTodosAutos () {

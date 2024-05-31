@@ -1,5 +1,5 @@
 <?php
-    class User {
+    class Pago {
         private $id;
         private $rentaId;
         private $monto;
@@ -13,9 +13,9 @@
             $this->rentaId = $rentaId;
             $this->monto = $monto;
             $this->fecha = $fecha;
-            $this->pagoRenta = $pagoRenta;
-            $this->pagoRetardo = $pagoRetardo;
-            $this->pagoTotal = $pagoTotal;
+            $this->PagoRenta = $PagoRenta;
+            $this->PagoRetardo = $PagoRetardo;
+            $this->PagoTotal = $PagoTotal;
         }
 
         // Getters y Setters para cada una de las propiedades
@@ -50,27 +50,28 @@
         public function setFecha ($fecha) {
             $this->fecha = $fecha;
         }
+
         public function getPagoRenta () {
-            return $this->pagoRenta;
+            return $this->PagoRenta;
         }
 
-        public function setPagoRenta ($pagoRenta) {
-            $this->pagoRenta = $pagoRenta;
+        public function setPagoRenta ($PagoRenta) {
+            $this->pagoRenta = $PagoRenta;
         }
         public function getPagoRetardo () {
-            return $this->pagoRetardo;
+            return $this->PagoRetardo;
         }
 
-        public function setPagoRetardo ($pagoRetardo) {
-            $this->pagoRetardo = $pagoRetardo;   
+        public function setPagoRetardo ($PagoRetardo) {
+            $this->PagoRetardo = $PagoRetardo;   
         }
 
         public function getPagoTotal () {
-            return $this->pagoTotal;
+            return $this->PagoTotal;
         }
 
-        public function setPagoTotal ($pagoTotal) {
-            $this->pagoTotal = $pagoTotal;
+        public function setPagoTotal ($PagoTotal) {
+            $this->PagoTotal = $PagoTotal;
         }
 
     }
