@@ -1,182 +1,387 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drivoxe</title>
-    <link rel="stylesheet" href="./css/home.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Bee - Catálogo</title>
+    <link rel="stylesheet" href="./css/home.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script defer src="./js/catalogo.js"></script>
-</head>
-<body>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="font-sans">
+    <section class="hero bg-gradient-to-r from-pink-500 to-red-500 text-white">
+      <div class="container flex align-middle items-center content-center">
+        <div class="text-car-container">
+          <h1 class="font-bold text-4xl mb-4">Bienvenido</h1>
+          <p>
+            Gracias por elegirnos, nuestra flota premium de vehículos es la que te sirve de la mejor manera. Nuestra oferta se ajusta a tus necesidades y tu satisfacción es nuestra prioridad. 
+            <br>
+            Para realizar una reserva, da click en el botón de abajo te llevara al catalogo de autos.
+          </p>
+        </div>
 
-    <section class="hero">
-        <div class="container">
-            <div class="text-car-container">
-                <h1>¿Por qué elegirnos?</h1>
-                <p>Únase a nuestros clientes satisfechos que confían en nosotros para sus viajes. Servimos con un montón de valores que se pueden sentir directamente.</p>
-            </div>
-            <div class="car-container">
-                <img src="./assets/imagen_car_home.png" alt="Car">
-            </div>
-            <div class="features-container">
-                <div class="feature easy-booking">Reserva fácil<br><span>Reserva tu coche en unos pocos clics.</span></div>
-                <div class="feature quality-variety">Calidad y variedad<br><span>Explora nuestra diversa gama de vehículos premium.</span></div>
-                <div class="feature affordable-rates">Tarifas asequibles<br><span>Disfrute de precios competitivos sin cargos ocultos.</span></div>
-            </div>
+        <div class="car-container">
+          <img src="./assets/imagen_car_home.png" alt="Car" />
         </div>
-        <div class="cta">
-            <h2>¿Listo para reservar?</h2>
-            <a href="#catalogo-autos" class="btn">Reserva Ahora</a>
+
+        <div class="features-container">
+          <div class="feature easy-booking">
+            <img
+              src="./assets/index/icon-book.png"
+              height="30px"
+              width="30px"
+              class="mx-auto my-2"
+              crossorigin="anonymous"
+            />
+            <h1 class="font-semibold text-xl mb-1">RESERVA FÁCIL</h1>
+            <small>Reserva tu coche en unos pocos clics.</small>
+          </div>
+          <div class="feature quality-variety">
+            <img
+              src="./assets/index/icon-booking.png"
+              height="30px"
+              width="30px"
+              class="mx-auto my-2"
+              crossorigin="anonymous"
+            />
+            <h1 class="font-semibold text-xl mb-1">CALIDAD Y VARIADA</h1>
+            <small>Explora nuestra diversa gama de vehículos premium.</small>
+          </div>
+          <div class="feature affordable-rates">
+            <img
+              src="./assets/index/icon-low-cost.png"
+              height="30px"
+              width="30px"
+              class="mx-auto my-2"
+              crossorigin="anonymous"
+            />
+            <h1 class="font-semibold text-xl mb-1">BAJO COSTO</h1>
+            <small>Disfrute de precios competitivos sin cargos ocultos.</small>
+          </div>
         </div>
+      </div>
+      <div class="cta">
+        <h1 class="font-bold text-3xl mb-10">¿Listo para reservar?</h1>
+        <a href="#catalo-autos" class="bg-white text-red-500 px-6 py-3 rounded">Reserva Ahora</a>
+      </div>
     </section>
 
     <section id="catalo-autos" class="catalo-autos">
-        <h2>Nuestra Flota Impresionante</h2>
+      <h1 class="text-5xl font-bold mb-2">Nuestra Impresionante Flota</h1>
+      <small class="text-lg">Selecciona tu vehículo favorito</small>
     </section>
 
-    <section class="filtros">
-        <label for="filtroMarca">Marca:</label>
-        <select id="filtroMarca">
-            <option value="Todos">Todos</option>
-            <option value="Toyota">Toyota</option>
-            <option value="Honda">Honda</option>
-            <option value="Ford">Ford</option>
-            <option value="Nissan">Nissan</option>
-            <option value="Chevrolet">Chevrolet</option>
-        </select>
-        
-        <label for="filtroColor">Color:</label>
-        <select id="filtroColor">
-            <option value="Todos">Todos</option>
-            <option value="Rojo">Rojo</option>
-            <option value="Blanco">Blanco</option>
-            <option value="Azul">Azul</option>
-            <option value="Negro">Negro</option>
-            <option value="Gris">Gris</option>
+    <section class="filtros bg-white">
+      <button id="filterButton" class="bg-red-500 text-white p-3 px-5 rounded-lg"><i class="fa fa-filter" aria-hidden="true"></i> Filtros</button>
+      <div id="filterMenu" class="hidden bg-red-500 text-white p-4 rounded-lg shadow-lg mt-2 w-45">
+        <label for="filtroMarca" class="block text-sm font-medium text-white">Marca:</label>
+        <select id="filtroMarca" class="mt-1 mb-3 block w-full pl-3 pr-10 py-2 text-base text-black border-zinc-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
+          <option value="Todos">Todos</option>
+          <option value="Toyota">Toyota</option>
+          <option value="Honda">Honda</option>
+          <option value="Ford">Ford</option>
+          <option value="Nissan">Nissan</option>
+          <option value="Chevrolet">Chevrolet</option>
         </select>
 
-        <label for="filtroPasajeros">Número de pasajeros:</label>
-        <select id="filtroPasajeros">
-            <option value="Todos">Todos</option>
-            <option value="4 pasajeros">4</option>
-            <option value="5 pasajeros">5</option>
+        <label for="filtroColor" class="block text-sm font-medium text-white">Color:</label>
+        <select id="filtroColor" class="mt-1 mb-3 block w-full pl-3 pr-10 py-2 text-base text-black border-zinc-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
+          <option value="Todos">Todos</option>
+          <option value="Rojo">Rojo</option>
+          <option value="Blanco">Blanco</option>
+          <option value="Azul">Azul</option>
+          <option value="Negro">Negro</option>
+          <option value="Gris">Gris</option>
         </select>
+
+        <label for="filtroPasajeros" class="block text-sm font-medium text-white">Número de pasajeros:</label>
+        <select id="filtroPasajeros" class="mt-1 mb-3 block w-full pl-3 pr-10 py-2 text-base text-black border-zinc-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
+          <option value="Todos">Todos</option>
+          <option value="4 pasajeros">4</option>
+          <option value="5 pasajeros">5</option>
+        </select>
+      </div>
     </section>
 
     <section id="catalogo-autos" class="catalogo-autos">
-        <div class="grid-autos" id="gridAutos"></div>
-        <div class="paginacion" id="paginacion"></div>
+      <div class="grid-autos" id="gridAutos"></div>
+      <div class="paginacion" id="paginacion"></div>
     </section>
 
     <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-links">
-                <a href="#" onclick="openModal('faqModal')">Preguntas Frecuentes</a>
-                <a href="#" onclick="openModal('privacyModal')">Política de Privacidad</a>
-                <a href="#" onclick="openModal('termsModal')">Términos y Condiciones</a>
-            </div>
-            <div class="footer-social">
-                <a href="https://www.facebook.com/groups/247998239069580?locale=es_LA"><img src="./assets/SocialMedia/Facebook.png" alt="Facebook"></a>
-                <a href="https://x.com/BudgetCarMexico"><img src="./assets/SocialMedia/X.jpeg" alt="Twitter"></a>
-                <a href="https://www.instagram.com/aerentals.mx/"><img src="./assets/SocialMedia/Instagram.png" alt="Instagram"></a>
-            </div>
-            <p>&copy; 2024 Drivoxe. Todos los derechos reservados.</p>
+      <div class="footer-container">
+        <div class="footer-links">
+          <a onclick="openModal('faqModal')">Preguntas Frecuentes</a>
+          <a onclick="openModal('privacyModal')">Política de Privacidad</a>
+          <a onclick="openModal('termsModal')">Términos y Condiciones</a>
         </div>
-    </footer>    
+        <div class="footer-social my-10">
+          <a href="https://www.facebook.com/groups/247998239069580?locale=es_LA">
+            <i class="fa-brands fa-facebook"></i>
+          </a>
+          <a href="https://x.com/BudgetCarMexico">
+            <i class="fa-brands fa-x-twitter"></i>
+          </a>
+          <a href="https://www.instagram.com/aerentals.mx/">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+        </div>
+        <p>
+          &copy; 2024 Book Bee
+          <br>
+          Todos los derechos reservados
+        </p>
+      </div>
+    </footer>
 
-    <div id="faqModal" class="modal faq-modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('faqModal')">&times;</span>
-            <h2>Preguntas Frecuentes</h2>
-            <button class="accordion">¿Cómo reservo un coche con Drivoxe?</button>
-            <div class="panel">
-                <p>Reservar con Drivoxe es fácil. Visite nuestro sitio web o aplicación, seleccione su coche preferido, establezca sus fechas y complete la reserva en unos pocos clics.</p>
-            </div>
-            <button class="accordion">¿Qué sucede si me excedo de días con respecto a los acordados?</button>
-            <div class="panel">
-                <p>Se cobrará una tarifa extra en relación con los días que se haya excedido.</p>
-            </div>
-            <button class="accordion">¿Cuáles son los requisitos de edad para alquilar un coche?</button>
-            <div class="panel">
-                <p>Debe tener al menos [edad mínima] años y poseer una licencia de conducir válida.</p>
-            </div>
-            <button class="accordion">¿Hay cargos ocultos en el costo del alquiler?</button>
-            <div class="panel">
-                <p>No, nuestras tarifas son transparentes y no tienen cargos ocultos.</p>
-            </div>
-            <button class="accordion">¿Cómo puedo extender mi período de alquiler?</button>
-            <div class="panel">
-                <p>Para extender su período de alquiler, contáctenos y haremos los arreglos necesarios según la disponibilidad del vehículo.</p>
-            </div>
+    <div id="faqModal" class="modal faq-modal rounded">
+      <div class="modal-content">
+        <span class="close hover:text-red-700 focus:text-red-700" onclick="closeModal('faqModal')">&times;</span>
+        <h2 class="text-center text-3xl font-bold mb-6">Preguntas Frecuentes</h2>
+        <button class="accordion text-xl">
+          ¿Cómo reservo un coche con Drivoxe?
+        </button>
+        <div class="panel">
+          <p class="text-lg text-zinc-500 text-justify">
+            Reservar con Drivoxe es fácil. Visite nuestro sitio web o
+            aplicación, seleccione su coche preferido, establezca sus fechas y
+            complete la reserva en unos pocos clics.
+          </p>
         </div>
+        <button class="accordion text-xl">
+          ¿Qué sucede si me excedo de días con respecto a los acordados?
+        </button>
+        <div class="panel">
+          <p class="text-lg text-zinc-500 text-justify">
+            Se cobrará una tarifa extra en relación con los días que se haya
+            excedido.
+          </p>
+        </div>
+        <button class="accordion text-xl">
+          ¿Cuáles son los requisitos de edad para alquilar un coche?
+        </button>
+        <div class="panel">
+          <p class="text-lg text-zinc-500 text-justify">
+            Debe tener al menos [edad mínima] años y poseer una licencia de
+            conducir válida.
+          </p>
+        </div>
+        <button class="accordion text-xl">
+          ¿Hay cargos ocultos en el costo del alquiler?
+        </button>
+        <div class="panel">
+          <p class="text-lg text-zinc-500 text-justify">
+            No, nuestras tarifas son transparentes y no tienen cargos ocultos.
+          </p>
+        </div>
+        <button class="accordion text-xl">
+          ¿Cómo puedo extender mi período de alquiler?
+        </button>
+        <div class="panel">
+          <p class="text-lg text-zinc-500 text-justify">
+            Para extender su período de alquiler, contáctenos y haremos los
+            arreglos necesarios según la disponibilidad del vehículo.
+          </p>
+        </div>
+      </div>
     </div>
 
     <div id="privacyModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('privacyModal')">&times;</span>
-            <h2>Política de Privacidad</h2>
-            <p><strong>1. Introducción</strong><br>
-            En [Nombre de la Empresa], valoramos su privacidad y estamos comprometidos a proteger su información personal. Esta Política de Privacidad describe cómo recopilamos, usamos y protegemos su información cuando utiliza nuestros servicios y nuestro sitio web.</p>
-            
-            <p><strong>2. Información que Recopilamos</strong><br>
-            <strong>Información Personal:</strong> Nombre, dirección, correo electrónico, número de teléfono, información de la licencia de conducir.<br>
-            <strong>Información de Pago:</strong> Datos de la tarjeta de crédito u otros métodos de pago.<br>
-            <strong>Información del Vehículo:</strong> Detalles del alquiler, historial de alquileres, preferencias del cliente.</p>
-            
-            <p><strong>3. Uso de la Información</strong><br>
-            <strong>Para Proveer Servicios:</strong> Utilizamos su información para procesar reservas, pagos y para proporcionarle los servicios solicitados.<br>
-            <strong>Comunicación:</strong> Podemos usar su información para comunicarnos con usted sobre su reserva, para enviar confirmaciones y para proporcionarle actualizaciones importantes.<br>
-            <strong>Marketing:</strong> Con su consentimiento, podemos usar su información para enviarle promociones y ofertas especiales.</p>
-            
-            <p><strong>4. Compartir Información</strong><br>
-            <strong>Con Terceros:</strong> No compartimos su información personal con terceros, excepto cuando sea necesario para proporcionar nuestros servicios (por ejemplo, procesamiento de pagos) o cuando lo exija la ley.<br>
-            <strong>Protección Legal:</strong> Podemos divulgar su información si creemos de buena fe que es necesario para cumplir con una obligación legal, proteger nuestros derechos, o investigar fraudes.</p>
-            
-            <p><strong>5. Seguridad de la Información</strong><br>
-            Implementamos medidas de seguridad técnicas y organizativas para proteger su información personal contra pérdida, uso indebido, y acceso no autorizado.</p>
-            
-            <p><strong>6. Sus Derechos</strong><br>
-            Usted tiene derecho a acceder, corregir, o eliminar su información personal. Para ejercer estos derechos, por favor contáctenos en [dirección de contacto].</p>
-            
-            <p><strong>7. Cambios a esta Política de Privacidad</strong><br>
-            Podemos actualizar esta Política de Privacidad ocasionalmente. Cualquier cambio será publicado en esta página con una nueva fecha de vigencia.</p>
-            
-            <p><strong>8. Contacto</strong><br>
-            Si tiene alguna pregunta sobre esta Política de Privacidad, por favor contáctenos en [dirección de correo electrónico] o [número de teléfono].</p>
-        </div>
+      <div class="modal-content">
+        <span class="close hover:text-red-700 focus:text-red-700" onclick="closeModal('privacyModal')">&times;</span>
+        <h2 class="text-center text-3xl font-bold mb-6">Política de Privacidad</h2>
+        <p class="text-justify">
+          <strong>1. Introducción</strong>
+          <br>
+          <small class="text-zinc-500">
+            En Book Bee, valoramos su privacidad y estamos
+            comprometidos a proteger su información personal. Esta Política de
+            Privacidad describe cómo recopilamos, usamos y protegemos su
+            información cuando utiliza nuestros servicios y nuestro sitio web.
+          </small>
+        </p>
+
+        <br>
+
+        <p class="text-justify">
+          <strong>2. Información que Recopilamos</strong>
+          <br>
+          <small class="text-zinc-500">
+            <strong>Información Personal:</strong> 
+              Nombre, dirección, correo electrónico, número de teléfono, información de la licencia de conducir.
+            <br>
+            <strong>Información de Pago:</strong> 
+              Datos de la tarjeta de crédito u otros métodos de pago.
+            <br>
+            <strong>Información del Vehículo:</strong>
+              Detalles del alquiler, historial de alquileres, preferencias del cliente.
+          </small>
+        </p>
+
+        <br>
+
+        <p class="text-justify">
+          <strong>3. Uso de la Información</strong>
+          <br>
+          <small class="text-zinc-500">
+            <strong>Para Proveer Servicios:</strong> 
+            Utilizamos su información para procesar reservas, pagos y para proporcionarle los servicios solicitados.
+            <br>
+            <strong>Comunicación:</strong>
+            Podemos usar Podemos usar su información para comunicarnos con usted sobre su reserva, para enviar confirmaciones y para proporcionarle actualizaciones importantes.
+            <br>
+            <strong>Marketing:</strong>
+            Con su consentimiento, podemos usar su información para enviarle promociones y ofertas especiales.
+          </small>
+        </p>
+
+        <br>
+
+        <p class="text-justify">
+          <strong>4. Compartir Información</strong>
+          <br>
+          <small class="text-zinc-500">
+            <strong>Con Terceros:</strong> 
+            No compartimos su información personal con terceros, excepto cuando sea necesario para proporcionar nuestros servicios (por ejemplo, procesamiento de pagos) o cuando lo exija la
+            ley.
+            <br>
+            <strong>Protección Legal:</strong>
+            Podemos divulgar su información si creemos de buena fe que es necesario para cumplir con una obligación legal, proteger nuestros derechos, o investigar fraudes.
+          </small>
+        </p>
+
+        <br>
+
+        <p class="text-justify">
+          <strong>5. Seguridad de la Información</strong>
+          <br>
+          <small class="text-zinc-500">
+            Implementamos medidas de seguridad técnicas y organizativas para proteger su información, uso indebido, y acceso no autorizado.
+          </small>
+        </p>
+
+        <br>
+
+        <p class="text-justify">
+          <strong>6. Sus Derechos</strong>
+          <br>
+          <small class="text-zinc-500">
+            Usted tiene derecho a acceder, corregir, o eliminar su información personal. Para ejercer estos derechos, por favor contáctenos en [dirección de contacto].
+          </small>
+        </p>
+
+        <br>
+
+        <p class="text-justify">
+          <strong>7. Cambios a esta Política de Privacidad</strong>
+          <br>
+          <small class="text-zinc-500">
+            Podemos actualizar esta Política de Privacidad ocasionalmente. Cualquier cambio será publicado en esta página con una nueva fecha de vigencia.
+          </small>
+        </p>
+
+        <br>
+
+        <p class="text-justify">
+          <strong>8. Contacto</strong>
+          <br>
+          <small class="text-zinc-500">
+            Si tiene alguna pregunta sobre esta Política de Privacidad, por favor contáctenos en [dirección de correo electrónico] o [número de teléfono].
+          </small>
+        </p>
+      </div>
     </div>
 
     <div id="termsModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('termsModal')">&times;</span>
-            <h2>Términos y Condiciones</h2>
-            <p>Bienvenido a [Nombre de la Empresa]. Estos términos y condiciones ("Términos") regulan el uso de nuestro sitio web y los servicios de alquiler de vehículos proporcionados por [Nombre de la Empresa] ("nosotros", "nuestro"). Al acceder a nuestro sitio web y/o utilizar nuestros servicios, usted acepta cumplir y estar sujeto a estos Términos.</p>
-            
-            <h3>2. Servicios de Renta de Autos</h3>
-            <p><strong>Requisitos de Alquiler:</strong> Para alquilar un vehículo, debe tener al menos [edad mínima] años y poseer una licencia de conducir válida.</p>
-            <p><strong>Proceso de Reserva:</strong> Las reservas se pueden hacer en línea a través de nuestro sitio web o en persona en nuestras oficinas.</p>
-            <p><strong>Pagos y Depósitos:</strong> Se requiere un depósito de [cantidad] al momento de la reserva. El pago completo debe realizarse antes de recoger el vehículo.</p>
-            <p><strong>Política de Cancelación:</strong> Las cancelaciones deben hacerse al menos [número de días] días antes de la fecha de recogida para recibir un reembolso completo. Las cancelaciones hechas con menos de [número de días] días de antelación pueden estar sujetas a una tarifa de cancelación de [cantidad].</p>
-            
-            <h3>3. Uso del Vehículo</h3>
-            <p><strong>Condiciones del Vehículo:</strong> Los vehículos deben devolverse en las mismas condiciones en las que se alquilaron. El cliente es responsable de cualquier daño o pérdida durante el período de alquiler.</p>
-            <p><strong>Kilometraje y Combustible:</strong> [detalles sobre políticas de kilometraje y combustible].</p>
-            <p><strong>Prohibiciones:</strong> Está prohibido utilizar el vehículo para actividades ilegales, competencias, o para transportar materiales peligrosos.</p>
-            
-            <h3>4. Seguro y Responsabilidad</h3>
-            <p><strong>Cobertura de Seguro:</strong> Ofrecemos varias opciones de seguro. Por favor, revise nuestras opciones de seguro y seleccione la que mejor se adapte a sus necesidades.</p>
-            <p><strong>Responsabilidad del Cliente:</strong> El cliente es responsable de cualquier daño no cubierto por el seguro y de las multas o infracciones de tráfico incurridas durante el período de alquiler.</p>
-            
-            <h3>5. Limitación de Responsabilidad</h3>
-            <p>[Nombre de la Empresa] no será responsable por daños indirectos, incidentales o consecuentes derivados del uso de nuestros servicios de alquiler.</p>
-            
-            <h3>6. Modificaciones a los Términos</h3>
-            <p>Nos reservamos el derecho de modificar estos Términos en cualquier momento. Las modificaciones serán efectivas desde el momento de su publicación en nuestro sitio web.</p>
-            
-            <h3>7. Ley Aplicable y Jurisdicción</h3>
-            <p>Estos Términos se regirán e interpretarán de acuerdo con las leyes de [jurisdicción]. Cualquier disputa que surja en relación con estos Términos estará sujeta a la jurisdicción exclusiva de los tribunales de [jurisdicción].</p>    
-        </div>
-    </div>
+      <div class="modal-content">
+        <span class="close hover:text-red-700 focus:text-red-700" onclick="closeModal('termsModal')">&times;</span>
+        <h2 class="text-center text-3xl font-bold mb-6">Términos y Condiciones</h2>
+        <p class="text-justify font-semibold text-base">
+          Bienvenido a Book Bee. Estos términos y condiciones ("Términos") regulan el uso de nuestro sitio web y los servicios de alquiler de vehículos proporcionados por Book Bee ("nosotros", "nuestro"). Al acceder a nuestro sitio web y/o utilizar nuestros servicios, usted acepta cumplir y estar sujeto a estos Términos.
+        </p>
+        
+        <br>
 
-</body>
+        <h3 class="text-2xl font-bold">2. Servicios de Renta de Autos</h3>
+        <p class="text-justify">
+          <small class="text-zinc-500">
+            <strong>Requisitos de Alquiler:</strong>
+            Para alquilar un vehículo, debe tener al menos 18 años y poseer una licencia de conducir válida.
+            Las reservas se pueden hacer en línea a través de nuestro sitio web o en persona en nuestras oficinas.
+            <br>
+            <strong>Pagos y Depósitos:</strong> 
+            Se requiere un depósito del %30 al momento de la reserva. El pago completo debe realizarse antes de recoger el vehículo.
+            <br>
+            <strong>Política de Cancelación:</strong> 
+            Las cancelaciones deben hacerse al menos [número de días] días antes de la fecha de recogida para recibir un reembolso completo. Las cancelaciones hechas con menos de [número de días] días de antelación pueden estar sujetas a una tarifa de cancelación de [cantidad].
+          </small>
+        </p>
+
+        <br>
+
+        <h3 class="text-2xl font-bold">3. Uso del Vehículo</h3>
+        <p class="text-justify">
+          <small class="text-zinc-500">
+            <strong>Condiciones del Vehículo:</strong> 
+            Los vehículos deben devolverse en las mismas condiciones en las que se alquilaron. El cliente es responsable de cualquier daño o pérdida durante el período de alquiler.
+            <br>
+            <strong>Kilometraje y Combustible:</strong> 
+            [detalles sobre políticas de kilometraje y combustible].
+            <br>
+            <strong>Prohibiciones:</strong>
+            Está prohibido utilizar el vehículo para actividades ilegales, competencias, o para transportar materiales peligrosos.
+          </small>
+        </p>
+        
+        <br>
+
+        <h3 class="text-2xl font-bold">4. Seguro y Responsabilidad</h3>
+        <p class="text-justify">
+          <small class="text-zinc-500">
+            <strong>Cobertura de Seguro:</strong> 
+            Ofrecemos varias opciones de seguro. Por favor, revise nuestras opciones de seguro y seleccione la que mejor se adapte a sus necesidades.
+            <br>
+            <strong>Responsabilidad del Cliente:</strong> 
+            El cliente es responsable de cualquier daño no cubierto por el seguro y de las multas o infracciones de tráfico incurridas durante el período de alquiler.
+          </small>
+        </p>
+
+        <br>
+
+        <h3 class="text-2xl font-bold">5. Limitación de Responsabilidad</h3>
+        <p class="text-justify">
+          <small class="text-zinc-500">
+            Book Bee no será responsable por daños indirectos, incidentales o consecuentes derivados del uso de nuestros servicios de alquiler.
+          </small>
+        </p>
+
+        <br>
+
+        <h3 class="text-2xl font-bold">6. Modificaciones a los Términos</h3>
+        <p class="text-justify">
+          <small class="text-zinc-500">
+            Nos reservamos el derecho de modificar estos Términos en cualquier momento. Las modificaciones serán efectivas desde el momento de su publicación en nuestro sitio web.
+          </small>
+        </p>
+
+        <br>
+
+        <h3 class="text-2xl font-bold">7. Ley Aplicable y Jurisdicción</h3>
+        <p class="text-justify">
+          <small class="text-zinc-500">
+            Estos Términos se regirán e interpretarán de acuerdo con las leyes de [jurisdicción]. Cualquier disputa que surja en relación con estos Términos estará sujeta a la jurisdicción exclusiva de los tribunales de [jurisdicción].
+          </small>
+        </p>
+      </div>
+    </div>
+    <script>
+      const filterButton = document.getElementById('filterButton');
+      const filterMenu = document.getElementById('filterMenu');
+    
+      filterButton.addEventListener('click', () => {
+        filterMenu.classList.toggle('hidden');
+      });
+    </script>
+  </body>
 </html>
