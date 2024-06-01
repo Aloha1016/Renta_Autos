@@ -4,5 +4,6 @@
         public function obtenerRentaPorId($id);
         public function obtenerRentaPorUsuario($usu_id);
         public function obtenerTodasRentas();
+        public function obtenerRentasActivas($usu_id)
     }
 ?>

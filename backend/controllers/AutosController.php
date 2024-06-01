@@ -19,7 +19,7 @@
         }
 
         public function obtenerAutoPorId($id){
-            $resultado=$this->autoService->obtenerAutoPorId($id);
+            $resultado=$this->autoService->obtenerAutoPorId($idAuto);
             if($resultado){
                 echo json_encode(array("success" => true, "Auto" => $resultado));
             }else{

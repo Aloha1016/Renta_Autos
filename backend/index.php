@@ -44,7 +44,9 @@
             else if ($accion == 'obtenerRentaUsuario') {
                 $RentaController->obtenerRentaPorId($idUser);
             }
-
+            else if ($accion == 'obtenerRentasActivas') {
+                $RentaController->obtenerRentasActivas($idUser);
+            }
            
         break;
         case 'GET':

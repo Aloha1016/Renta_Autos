@@ -39,12 +39,22 @@
         }
 
 
-        public function obtenerRentaPorId($id){
-            $resultado=$this->rentaService->obtenerRentaPorId($id);
+        public function obtenerRentaPorId($idUser){
+            $resultado=$this->rentaService->obtenerRentaPorId($idUser);
             if($resultado){
                 echo json_encode(array("success" => true, "user" => $resultado));
             }else{
-                echo json_encode(array("success" => false, "message" => "error al borrar el usuario"));
+                echo json_encode(array("success" => false, "message" => "error al obtener rentas del usuario"));
+
+            }
+        }
+
+        public function obtenerRentasActivas($idUser){
+            $resultado=$this->rentaService->obtenerRentasActivas($idUser);
+            if($resultado){
+                echo json_encode(array("success" => true, "user" => $resultado));
+            }else{
+                echo json_encode(array("success" => false, "message" => "error al obtener rentas activas"));
 
             }
         }

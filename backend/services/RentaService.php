@@ -62,5 +62,13 @@
             }
             return null;
         }
+        public function obtenerRentasActivas($usu_id) {
+            $sql = "SELECT * FROM rentas WHERE Ren_Usu_Id='$usu_id' AND Ren_Estado='Pendiente'";
+            $result = $this->db->query($sql);
+            if ($result->num_rows == 1) {
+                return $result->fetch_assoc();
+            }
+            return null;
+        }
     }
 ?>
