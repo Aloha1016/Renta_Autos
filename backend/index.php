@@ -49,13 +49,16 @@
         break;
         case 'GET':
             $accion = $_GET['accion'];
-            if($accion == "todosUsuarios"){
+            if ($accion == 'todosUsuarios') {
                 $userController->obtenerTodosUsuarios();
-            }
-            //Autos
-            else if($accion == 'ObtenerAutos'){
+            } elseif ($accion == 'ObtenerAutos') {
                 $AutoController->obtenerTodosAutos();
+            } elseif ($accion == 'obtenerRentasActivas') {
+                $RentaController->obtenerRentasActivas();
+            } elseif ($accion == 'obtenerHistorialRentas') {
+                $RentaController->obtenerHistorialRentas();
             }
             break;
+        
     }
 ?>

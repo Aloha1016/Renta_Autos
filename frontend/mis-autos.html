@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mis Autos - Book Bee</title>
+    <link rel="stylesheet" href="./css/mis-autos.css" />
+    <script defer src="./js/mis-autos.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="font-sans">
+    <header class="bg-white text-zinc-900 p-6 px-20 flex justify-between items-center">
+      <h1 class="text-3xl font-bold text-red-500">BOOK BEE.</h1>
+      <div class="space-x-4">
+        <a href="catalogo.html" class="text-zinc-500 hover:text-red-500">Catálogo</a>
+        <a href="home.html" class="text-zinc-500 hover:text-red-500">Inicio</a>
+        <a href="logout.html" class="bg-red-500 text-white px-4 py-2 rounded">Cerrar Sesión</a>
+      </div>
+    </header>
+    
+    <main class="container mx-auto py-10">
+      <section>
+        <h2 class="text-3xl font-bold mb-6">Mis Autos</h2>
+        <div>
+          <button class="accordion bg-red-500 text-white p-3 w-full text-left">Autos Activos</button>
+          <div class="panel">
+            <ul id="autosActivos" class="list-disc list-inside p-3 bg-white"></ul>
+          </div>
+          <button class="accordion bg-red-500 text-white p-3 w-full text-left mt-4">Historial de Autos</button>
+          <div class="panel">
+            <ul id="historialAutos" class="list-disc list-inside p-3 bg-white"></ul>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

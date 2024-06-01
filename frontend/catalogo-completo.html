@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Bee - Catálogo Completo</title>
+    <link rel="stylesheet" href="./css/home.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script defer src="./js/catalogo-completo.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="font-sans">
+    <header class="bg-white text-zinc-900 p-6 px-20 flex justify-between items-center">
+      <h1 class="text-3xl font-bold text-red-500">BOOK BEE.</h1>
+      <div class="space-x-4">
+        <a href="catalogo-completo.html" class="text-zinc-500 hover:text-red-500">Catálogo</a>
+        <a href="mis-autos.html" class="text-zinc-500 hover:text-red-500">Mis Autos</a>
+        <a href="logout.html" class="bg-red-500 text-white px-4 py-2 rounded">Cerrar Sesión</a>
+      </div>
+    </header>
+    <main class="container mx-auto py-10">
+      <section id="catalogo-autos" class="catalogo-autos">
+        <h1 class="text-5xl font-bold mb-2">Nuestro Catálogo Completo</h1>
+        <div class="grid-autos" id="gridAutos"></div>
+      </section>
+    </main>
+  </body>
+</html>
