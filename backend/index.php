@@ -16,7 +16,7 @@
             if ($accion == 'registrarUsuario') {
                 $userController->registrar();
                 break;
-            case 'login':
+            }else if ($accion == 'login') {
                 $userController->login();
             }else if($accion == 'ObtenerUsuarioId'){
                 $idUser = $_POST['id'];
@@ -47,7 +47,6 @@
             else if ($accion == 'obtenerRentasActivas') {
                 $RentaController->obtenerRentasActivas($idUser);
             }
-           
         break;
         case 'GET':
             $accion = $_GET['accion'];

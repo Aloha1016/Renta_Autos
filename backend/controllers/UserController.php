@@ -16,9 +16,10 @@
 
                 if (!empty($correo) && !empty($password)) {
                     $user = $this->userService->login($correo, $password);
+                    $resultado=$this->userService->obtenerUsuarioPorCorreo($correo);
                     if($user) {
                         // redirigir a otra pagina
-                        echo json_encode(array("success" => true, "message" => "Inicio Satisfactorio"));
+                        echo json_encode(array("success" => true, "message" => "Inicio Satisfactorio",$resultado));
                     } else {
                         echo json_encode(array("success" => false, "message" => "Credenciales Incorrectas"));
                     }
@@ -63,7 +64,7 @@
             }
         }
 
-        public function borrarUsuario($idUser){
+        public function borrarUsuario($id){
             $resultado=$this->userService->borrarUsuario($id);
             if($resultado){
                 echo json_encode(array("success" => true, "message" => "usuario borrado exitosamente"));
@@ -73,7 +74,7 @@
             }
         }
 
-        public function obtenerUsuarioPorId($idUser){
+        public function obtenerUsuarioPorId($id){
             $resultado=$this->userService->obtenerUsuarioPorId($id);
             if($resultado){
                 echo json_encode(array("success" => true, "user" => $resultado));
@@ -83,7 +84,7 @@
             }
         }
 
-        public function actualizarUsuario($idUser){
+        public function actualizarUsuario($id){
 
             $nombre = $_POST['nombre'];
             $apaterno = $_POST['apaterno'];

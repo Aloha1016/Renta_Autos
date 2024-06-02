@@ -6,7 +6,7 @@
 
         public function __construct() {
             $db = (new Database())->getConnection();
-            $this->autoService = new AutosService($db);
+            $this->autoService = new AutoService($db);
         }
 
         public function obtenerTodosAutos () {
