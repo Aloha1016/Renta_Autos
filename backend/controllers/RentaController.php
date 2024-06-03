@@ -18,14 +18,14 @@
             $fecha_devolucion = $_POST['fecha_devolucion'];
             
 
-            $rentaNueva = new Renta($usu_id, $aut_id, $fecha_renta,$fecha_devolucion, $estado);
+            $rentaNueva = new Renta($usu_id, $aut_id, $fecha_renta, $fecha_devolucion, $estado);
 
             $resultado = $this->rentaService->registrarRenta($rentaNueva);
 
             if ($resultado) {
-                echo json_encode(array("success" => true, "message" => "Usuario Registrado Satisfactoriamente"));
+                echo json_encode(array("success" => true, "message" => "Renta Registrada Satisfactoriamente"));
             } else {
-                echo json_encode(array("success" => false, "message" => "Error al registrar usuario"));
+                echo json_encode(array("success" => false, "message" => "Error al registrar renta"));
             }
         }
 

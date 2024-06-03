@@ -23,7 +23,7 @@
             VALUES ('$usu_id', '$aut_id', '$fecha_renta',
             '$fecha_devolucion','$estado')";
             
-            if ($this->db->query($sql_insertar) === TRUE) {
+            if ($this->db->query($sql_insertar)) {
                 return true;
             } else {
                 return false;

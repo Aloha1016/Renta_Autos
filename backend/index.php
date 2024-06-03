@@ -5,59 +5,64 @@
     require_once '../backend/controllers/RentaController.php';
 
     $userController = new UserController();
-    $AutoController = new AutoController();
-    $PagoController = new PagoController();
-    $RentaController = new RentaController();
+    $autoController = new AutoController();
+    $pagoController = new PagoController();
+    $rentaController = new RentaController();
 
     switch ($_SERVER["REQUEST_METHOD"]) {
         case 'POST':
             $accion = $_POST['accion'];
-            //Usuarios
+            // Usuarios
             if ($accion == 'registrarUsuario') {
                 $userController->registrar();
-                break;
-            case 'login':
+            } else if ($accion == 'login') {
                 $userController->login();
-            }else if($accion == 'ObtenerUsuarioId'){
+            } else if ($accion == 'ObtenerUsuarioId') {
                 $idUser = $_POST['id'];
                 $userController->obtenerUsuarioPorId($idUser);
-            }else if ($accion == 'borrar'){
+            } else if ($accion == 'borrar') {
                 $idUser = $_POST['id'];
-                $userController->borrarusuario($idUser);
-            } else if ($accion == 'actualizarUsuario'){
-                $idUser=$_POST['id'];
+                $userController->borrarUsuario($idUser);
+            } else if ($accion == 'actualizarUsuario') {
+                $idUser = $_POST['id'];
                 $userController->actualizarUsuario($idUser);
             }
-            //Autos
-            else if($accion == 'ObtenerAutoId'){
+            // Autos
+            else if ($accion == 'ObtenerAutoId') {
                 $idAuto = $_POST['id'];
-                $AutoController->obtenerAutoPorId($idAuto);
+                $autoController->obtenerAutoPorId($idAuto);
             }
-            //Pagos
+            // Pagos
             else if ($accion == 'registrarPago') {
-                $PagoController->registrarPago();
+                $pagoController->registrarPago();
             }
-            //Rentas
+            // Rentas
             else if ($accion == 'registrarRenta') {
-                $RentaController->registrarRenta();
-            }
-            else if ($accion == 'obtenerRentaUsuario') {
-                $RentaController->obtenerRentaPorId($idUser);
-            }
-            else if ($accion == 'obtenerRentasActivas') {
-                $RentaController->obtenerRentasActivas($idUser);
-            }
-           
-        break;
-        case 'GET':
-            $accion = $_GET['accion'];
-            if($accion == "todosUsuarios"){
-                $userController->obtenerTodosUsuarios();
-            }
-            //Autos
-            else if($accion == 'ObtenerAutos'){
-                $AutoController->obtenerTodosAutos();
+                $rentaController->registrarRenta();
+            } else if ($accion == 'obtenerRentaUsuario') {
+                $idUser = $_POST['id'];
+                $rentaController->obtenerRentaPorId($idUser);
+            } else if ($accion == 'obtenerRentasActivas') {
+                $idUser = $_POST['id'];
+                $rentaController->obtenerRentasActivas($idUser);
             }
             break;
+
+        case 'GET':
+                $accion = htmlspecialchars($_GET['accion'], ENT_QUOTES, 'UTF-8');
+                switch ($accion) {
+                    case 'todos':
+                        $userController->obtenerTodosUsuarios();
+                        break;
+                    case 'ObtenerAutos':
+                        $autoController->obtenerTodosAutos();
+                        break;
+                    case 'ObtenerAutoId':
+                        $idAuto = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
+                        if ($idAuto) {
+                            $autoController->obtenerAutoPorId($idAuto);
+                        } 
+                        break;
+        }
     }
 ?>
