@@ -6,15 +6,17 @@
         private $fecha_renta;
         private $fecha_devolucion;
         private $estado;
+        private $total;
        
 
         // Creacion del Constructor de la Clase
-        public function __construct ($usu_id, $aut_id, $fecha_renta,$fecha_devolucion, $estado) {
+        public function __construct ($usu_id, $aut_id, $fecha_renta,$fecha_devolucion, $estado, $total) {
             $this->usu_id = $usu_id;
             $this->aut_id = $aut_id;
             $this->fecha_renta = $fecha_renta;
             $this->fecha_devolucion = $fecha_devolucion;
             $this->estado = $estado;
+            $this->total = $total;
         }
 
         // Getters y Setters para cada una de las propiedades
@@ -63,6 +65,14 @@
 
         public function setEstado ($estado) {
             $this->estado = $estado;
+        }
+
+        public function getTotal () {
+            return $this->total;
+        }
+
+        public function setTotal ($total) {
+            $this->total = $total;
         }
     }
 ?>

@@ -17,11 +17,12 @@
             $fecha_renta = $renta->getFechaRenta();
             $fecha_devolucion = $renta->getFechaDevolucion();
             $estado = $renta->getEstado();
+            $total = $renta->getTotal();
     
             $sql_insertar = "INSERT INTO rentas (Ren_Usu_Id, Ren_Aut_Id, Ren_Fecha_Renta, Ren_Fecha_Devolucion, 
-            Ren_Estado) 
+            Ren_Estado,Ren_Total) 
             VALUES ('$usu_id', '$aut_id', '$fecha_renta',
-            '$fecha_devolucion','$estado')";
+            '$fecha_devolucion','$estado','$total')";
             
             if ($this->db->query($sql_insertar) === TRUE) {
                 return true;

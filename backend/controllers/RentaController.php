@@ -16,9 +16,10 @@
             $fecha_renta = $_POST['fecha_renta'];
             $estado = $_POST['estado'];
             $fecha_devolucion = $_POST['fecha_devolucion'];
+            $total = $_POST['total'];
             
 
-            $rentaNueva = new Renta($usu_id, $aut_id, $fecha_renta,$fecha_devolucion, $estado);
+            $rentaNueva = new Renta($usu_id, $aut_id, $fecha_renta,$fecha_devolucion, $estado, $total);
 
             $resultado = $this->rentaService->registrarRenta($rentaNueva);
 
