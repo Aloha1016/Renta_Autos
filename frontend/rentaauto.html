@@ -42,6 +42,10 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', async () => {
+      if (!localStorage.getItem('userId')) {
+          window.location.href = '../frontend/index.html'
+      }
+      
       const params = new URLSearchParams(window.location.search);
       const autoId = params.get('id');
       localStorage.setItem('autoId', autoId);
@@ -264,6 +268,7 @@
       .then((response) => response.json())
       .then((res) => {
           if (res.success) {
+            actualizarPago()
             processingPayment.classList.add('hidden');
             paymentCancelled.classList.add('hidden');
             paymentSuccess.classList.remove('hidden');

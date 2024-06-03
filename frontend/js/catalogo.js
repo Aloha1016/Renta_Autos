@@ -1,4 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
+    if (!localStorage.getItem('userId')) {
+        window.location.href = '../frontend/index.html'
+    }
+
     const gridAutos = document.getElementById('gridAutos');
     const filtroMarca = document.getElementById('filtroMarca');
     const filtroColor = document.getElementById('filtroColor');
