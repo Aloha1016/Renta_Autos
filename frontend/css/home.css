@@ -101,6 +101,16 @@ p {
     background: #bc8e3f;
 }
 
+@media (max-width: 768px) {
+    .botones {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        align-items: flex-end;
+    }
+}
+
+
 @media (min-width: 768px) {
     .container {
         flex-direction: row;

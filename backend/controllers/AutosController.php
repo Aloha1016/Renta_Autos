@@ -6,7 +6,7 @@
 
         public function __construct() {
             $db = (new Database())->getConnection();
-            $this->autoService = new AutoService($db);
+            $this->autoService = new AutosService($db);
         }
 
         public function obtenerTodosAutos () {
@@ -18,7 +18,7 @@
             }
         }
 
-        public function obtenerAutoPorId($id){
+        public function obtenerAutoPorId($idAuto){
             $resultado=$this->autoService->obtenerAutoPorId($idAuto);
             if($resultado){
                 echo json_encode(array("success" => true, "Auto" => $resultado));

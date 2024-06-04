@@ -24,7 +24,7 @@ try {
         'unit_amount' => $data['total'],
         'product_data' => [
           'name' => 'Renta Autos',
-          'description' => 'Renta de un ' . $data['product'],
+          'description' => 'Renta de un ' . $data['nombre'] . ' por ' . $data['dias'] . ' dias, del ' . $data['fechaInicio'] . ' al ' . $data['fechaFin'],
         ],
       ],
     ]],

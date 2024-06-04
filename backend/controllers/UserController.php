@@ -16,10 +16,9 @@
 
                 if (!empty($correo) && !empty($password)) {
                     $user = $this->userService->login($correo, $password);
-                    $resultado=$this->userService->obtenerUsuarioPorCorreo($correo);
                     if($user) {
                         // redirigir a otra pagina
-                        echo json_encode(array("success" => true, "message" => "Inicio Satisfactorio",$resultado));
+                        echo json_encode(array("success" => true, "message" => "Inicio Satisfactorio", "user" => $user));
                     } else {
                         echo json_encode(array("success" => false, "message" => "Credenciales Incorrectas"));
                     }
@@ -36,15 +35,15 @@
             $nombre = $_POST['nombre'];
             $apaterno = $_POST['apaterno'];
             $amaterno = $_POST['amaterno'];
+            $correo = $_POST['correo'];
+            $telefono = $_POST['telefono'];
             $estado = $_POST['estado'];
             $municipio = $_POST['municipio'];
             $direccion = $_POST['direccion'];
-            $telefono = $_POST['telefono'];
-            $correo = $_POST['correo'];
             $password = $_POST['password'];
             
 
-            $usuarioNuevo = new User($nombre, $apaterno, $amaterno,$estado, $municipio, $direccion, $telefono, $correo, $password);
+            $usuarioNuevo = new User($nombre, $apaterno, $amaterno, $correo, $telefono, $estado, $municipio, $direccion, $password);
 
             $resultado = $this->userService->registrarUsuario($usuarioNuevo);
 
@@ -64,8 +63,8 @@
             }
         }
 
-        public function borrarUsuario($id){
-            $resultado=$this->userService->borrarUsuario($id);
+        public function borrarUsuario($idUser){
+            $resultado=$this->userService->borrarUsuario($idUser);
             if($resultado){
                 echo json_encode(array("success" => true, "message" => "usuario borrado exitosamente"));
             }else{
@@ -74,8 +73,8 @@
             }
         }
 
-        public function obtenerUsuarioPorId($id){
-            $resultado=$this->userService->obtenerUsuarioPorId($id);
+        public function obtenerUsuarioPorId($idUser){
+            $resultado=$this->userService->obtenerUsuarioPorId($idUser);
             if($resultado){
                 echo json_encode(array("success" => true, "user" => $resultado));
             }else{
@@ -84,22 +83,22 @@
             }
         }
 
-        public function actualizarUsuario($id){
+        public function actualizarUsuario($idUser){
 
             $nombre = $_POST['nombre'];
             $apaterno = $_POST['apaterno'];
             $amaterno = $_POST['amaterno'];
+            $correo = $_POST['correo'];
+            $telefono = $_POST['telefono'];
             $estado = $_POST['estado'];
             $municipio = $_POST['municipio'];
             $direccion = $_POST['direccion'];
-            $telefono = $_POST['telefono'];
-            $correo = $_POST['correo'];
             $password = $_POST['password'];
+            
+            $usuarioNuevo = new User($nombre, $apaterno, $amaterno, $correo, $telefono, $estado, $municipio, $direccion, $password);
 
-            $usuarioNuevo = new User($nombre, $apaterno, $amaterno,$estado, $municipio, $direccion, $telefono, $correo, $password);
 
-
-            $resultado = $this->userService->actualizarUsuario($id,$usuarioNuevo);
+            $resultado = $this->userService->actualizarUsuario($idUser, $usuarioNuevo);
 
             if ($resultado) {
                 echo json_encode(array("success" => true, "message" => "Usuario actualizado Satisfactoriamente"));

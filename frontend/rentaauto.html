@@ -42,10 +42,15 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', async () => {
+      if (!localStorage.getItem('userId')) {
+          window.location.href = '../frontend/index.html'
+      }
+      
       const params = new URLSearchParams(window.location.search);
       const autoId = params.get('id');
+      localStorage.setItem('autoId', autoId);
       if (autoId) {
-        const response = await fetch(`../backend/index.php?accion=getAutoById&id=${autoId}`);
+        const response = await fetch(`../backend/index.php?accion=ObtenerAutoId&id=${autoId}`);
         const data = await response.json();
         if (data.success) {
           const auto = data.Auto;
@@ -139,25 +144,44 @@
         const nombre = marca + ' ' + modelo;
         const total = diffDays * costo * 100;
         if (total > 0 && nombre !== '') {
-          openModal(nombre, total);
+          openModal(nombre, total, start, end, diffDays);
         } else {
           alert('Por favor, completa todos los campos');
         }
       }
     }
 
-    async function openModal(nombre, total) {
+    function formatDate (date) {
+        let day = date.getDate();
+        let month = date.getMonth() + 1; // Los meses son indexados desde 0
+        let year = date.getFullYear();
+
+        // Asegúrate de que el día y el mes tengan dos dígitos
+        if (day < 10) {
+            day = '0' + day;
+        }
+        if (month < 10) {
+            month = '0' + month;
+        }
+
+        return `${year}-${month}-${day}`;
+    }
+
+    async function openModal(nombre, total, inicio, fin, dias) {
       const modal = document.getElementById('paymentModal');
       const processingPayment = document.getElementById('processingPayment');
       const paymentCancelled = document.getElementById('paymentCancelled');
       const paymentSuccess = document.getElementById('paymentSuccess');
       const modalDetails = document.getElementById('modalDetails');
-
+      
+      const fechaInicio = formatDate(inicio);
+      const fechaFin = formatDate(fin);
+      
       modal.classList.remove('hidden');
       processingPayment.classList.remove('hidden');
       paymentCancelled.classList.add('hidden');
       paymentSuccess.classList.add('hidden');
-
+      
       // Crear la sesión de Stripe en tu backend
       const response = await fetch('../backend/create-checkout-session.php', {
         method: 'POST',
@@ -166,7 +190,10 @@
         },
         body: JSON.stringify({
           nombre,
-          total
+          total,
+          fechaInicio,
+          fechaFin,
+          dias,
         })
       });
 
@@ -179,11 +206,8 @@
           if (popup.closed) {
             clearInterval(interval)
             const res = await pruebaPago(session.id)
-            console.log("🚀 ~ interval ~ res:", res)
             if (res) {
-              processingPayment.classList.add('hidden');
-              paymentCancelled.classList.add('hidden');
-              paymentSuccess.classList.remove('hidden');
+              await actualizarRenta(fechaInicio, fechaFin, total)
             } else {
               processingPayment.classList.add('hidden');
               paymentCancelled.classList.remove('hidden');
@@ -209,7 +233,6 @@
         }
 
         const data = await response.json();
-        console.log("🚀 ~ pruebaPago ~ data:", data)
 
         if (data.payment_status === 'paid') {
           return true;
@@ -221,14 +244,38 @@
       }
     }
 
-    function paymentCancelled() {
-      document.getElementById('processingPayment').classList.add('hidden');
-      document.getElementById('paymentCancelled').classList.remove('hidden');
-    }
+    function actualizarRenta(fechaInicio, fechaFin, total) {
+      const accion = 'registrarRenta';
+      const usu_id = localStorage.getItem('userId')
+      const aut_id = localStorage.getItem('autoId')
+      const fecha_renta = fechaInicio
+      const estado = 'Completado'
+      const fecha_devolucion = fechaFin
 
-    function paymentSuccess() {
-      document.getElementById('processingPayment').classList.add('hidden');
-      document.getElementById('paymentSuccess').classList.remove('hidden');
+      const form = new FormData()
+      form.append('accion', 'registrarRenta')
+      form.append('usu_id', usu_id)
+      form.append('aut_id', aut_id)
+      form.append('fecha_renta', fecha_renta)
+      form.append('estado', estado)
+      form.append('fecha_devolucion', fecha_devolucion)
+      form.append('total', total)
+
+      fetch('../backend/index.php', {
+        method: 'POST',
+        body: form
+      })
+      .then((response) => response.json())
+      .then((res) => {
+          if (res.success) {
+            processingPayment.classList.add('hidden');
+            paymentCancelled.classList.add('hidden');
+            paymentSuccess.classList.remove('hidden');
+          }
+      })
+      .catch((err) => {
+        console.log('@@ err => ', err)
+      })
     }
 
     function closeModal() {

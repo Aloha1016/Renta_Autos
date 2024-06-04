@@ -29,11 +29,11 @@
         }
 
         public function getUsuId () {
-            return $this->aut_id;
+            return $this->usu_id;
         }
 
-        public function setUsuId ($aut_id) {
-            $this->aut_id = $aut_id;
+        public function setUsuId ($usu_id) {
+            $this->usu_id = $usu_id;
         }
 
         public function getAutId () {

@@ -19,14 +19,14 @@
             $total = $_POST['total'];
             
 
-            $rentaNueva = new Renta($usu_id, $aut_id, $fecha_renta,$fecha_devolucion, $estado, $total);
+            $rentaNueva = new Renta($usu_id, $aut_id, $fecha_renta, $fecha_devolucion, $estado, $total);
 
             $resultado = $this->rentaService->registrarRenta($rentaNueva);
 
             if ($resultado) {
-                echo json_encode(array("success" => true, "message" => "Usuario Registrado Satisfactoriamente"));
+                echo json_encode(array("success" => true, "message" => "Renta Registrada Satisfactoriamente"));
             } else {
-                echo json_encode(array("success" => false, "message" => "Error al registrar usuario"));
+                echo json_encode(array("success" => false, "message" => "Error al registrar renta"));
             }
         }
 
@@ -39,24 +39,21 @@
             }
         }
 
-
         public function obtenerRentaPorId($idUser){
-            $resultado=$this->rentaService->obtenerRentaPorId($idUser);
-            if($resultado){
+            $resultado = $this->rentaService->obtenerRentaPorId($idUser);
+            if ($resultado) {
                 echo json_encode(array("success" => true, "user" => $resultado));
-            }else{
+            } else {
                 echo json_encode(array("success" => false, "message" => "error al obtener rentas del usuario"));
-
             }
         }
-
+        
         public function obtenerRentasActivas($idUser){
-            $resultado=$this->rentaService->obtenerRentasActivas($idUser);
-            if($resultado){
+            $resultado = $this->rentaService->obtenerRentasActivas($idUser);
+            if ($resultado) {
                 echo json_encode(array("success" => true, "user" => $resultado));
-            }else{
+            } else {
                 echo json_encode(array("success" => false, "message" => "error al obtener rentas activas"));
-
             }
         }
     }

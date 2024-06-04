@@ -1,4 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
+    if (!localStorage.getItem('userId')) {
+        window.location.href = '../frontend/index.html'
+    }
+
     const gridAutos = document.getElementById('gridAutos');
     const filtroMarca = document.getElementById('filtroMarca');
     const filtroColor = document.getElementById('filtroColor');
@@ -10,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const autosPorPagina = 6;
 
     async function fetchAutos() {
-        const response = await fetch('../backend/index.php?accion=getAllAutos');
+        const response = await fetch('../backend/index.php?accion=ObtenerAutos');
         const data = await response.json();
         if (data.success) {
             autosFiltrados = data.Autos;
@@ -64,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const color = filtroColor.value;
         const pasajeros = filtroPasajeros.value;
 
-        fetch('../backend/index.php?accion=getAllAutos')
+        fetch('../backend/index.php?accion=ObtenerAutos')
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
@@ -92,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
     filtroPasajeros.addEventListener('change', aplicarFiltros);
 
     window.mostrarDetalles = async function(autoId) {
-        const response = await fetch(`../backend/index.php?accion=getAutoById&id=${autoId}`);
+        const response = await fetch(`../backend/index.php?accion=ObtenerAutoId&id=${autoId}`);
         const data = await response.json();
         if (data.success) {
             const auto = data.Auto;
