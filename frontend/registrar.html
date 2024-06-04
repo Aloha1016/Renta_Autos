@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Bee - Registro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div
+      class="min-h-screen bg-cover bg-center flex items-center justify-center"
+      style="background-image: url('./assets/register/back.jpg')"
+    >
+      <div
+        class="bg-gradient-to-r from-pink-500 to-red-500 text-white p-8 rounded-lg shadow-lg max-w-md w-full"
+      >
+        <h2
+          class="text-2xl font-bold mb-6 text-center text-white"
+        >
+          REGISTRARSE
+        </h2>
+        <form id="registrarForm" method="POST" action="../backend/index.php">
+          <input type="hidden" name="accion" value="registrarUsuario" />
+
+          <div class="mb-4">
+            <label class="block text-white" for="usuario">Nombre: </label>
+            <input type="text" id="nombre" name="nombre" required class="w-full p-2 rounded mt-1 text-black focus:outline-none focus:ring-2 focus:ring-black" />
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-white" for="usuario">Apellido Paterno: </label>
+            <input type="text" name="apaterno" required id="apaterno" class="w-full p-2 rounded mt-1 text-black focus:outline-none focus:ring-2 focus:ring-black" />
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-white" for="usuario">Apellido Materno: </label>
+            <input type="text" name="amaterno" required id="amaterno" class="w-full p-2 rounded mt-1 text-black focus:outline-none focus:ring-2 focus:ring-black" />
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-white" for="usuario">Correo: </label>
+            <input type="text" name="correo" required id="correo" class="w-full p-2 rounded mt-1 text-black focus:outline-none focus:ring-2 focus:ring-black" />
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-white" for="usuario">Teléfono: </label>
+            <input type="tel" name="telefono" required id="telefono" class="w-full p-2 rounded mt-1 text-black focus:outline-none focus:ring-2 focus:ring-black" />
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-white" for="usuario">Estado: </label>
+            <input type="text" name="estado" required id="estado" class="w-full p-2 rounded mt-1 text-black focus:outline-none focus:ring-2 focus:ring-black" />
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-white" for="usuario">Municipio: </label>
+            <input type="text" name="municipio" required id="municipio" class="w-full p-2 rounded mt-1 text-black focus:outline-none focus:ring-2 focus:ring-black" />
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-white" for="usuario">Dirección: </label>
+            <input type="text" name="direccion" required id="direccion" class="w-full p-2 rounded mt-1 text-black focus:outline-none focus:ring-2 focus:ring-black" />
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-white" for="password">Password: </label>
+            <input type="password" name="password" required id="password" class="w-full p-2 rounded mt-1 text-black focus:outline-none focus:ring-2 focus:ring-black" />
+          </div>
+
+          <button
+            type="submit"
+            class="w-full mt-10 bg-white text-red-600 font-bold px-6 py-3 rounded hover:bg-black hover:text-white transition duration-200"
+          >
+            REGISTRARSE
+          </button>
+        </form>
+      </div>
+    </div>
+    <script src="./js/app.js"></script>
+  </body>
+</html>

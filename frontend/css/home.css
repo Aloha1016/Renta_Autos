@@ -1,0 +1,482 @@
+@import url('https://fonts.googleapis.com/css2?family=Georgia&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.hero {
+    background-color: white;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+}
+
+.car-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.car-container img {
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+.features-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.feature {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    border-radius: 7.5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 90%;
+    text-align: center;
+    width: 180px;
+    height: 210px;
+}
+
+.feature span {
+    font-size: 0.9em;
+    color: #555;
+}
+
+.feature:hover {
+    background-color: rgba(255, 255, 255, 1);
+    color: black;
+}
+
+.cta {
+    width: 90%;
+    max-width: 600px;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.cta h2 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.cta .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #8C6E39;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.cta .btn:hover {
+    background: #bc8e3f;
+}
+
+@media (max-width: 768px) {
+    .botones {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        align-items: flex-end;
+    }
+}
+
+
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    .text-car-container {
+        flex: 1;
+        padding-right: 20px;
+    }
+
+    .car-container {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .features-container {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    .feature {
+        width: 180px;
+    }
+
+    .cta {
+        position: relative;
+        width: 100%;
+        max-width: none;
+        margin: 0 auto;
+        margin-top: 20px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .cta {
+        max-width: 35%;
+        margin-top: 0;
+    }
+
+    .features-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
+    .feature {
+        height: 260px;
+        max-width: 113px;
+    }
+}
+
+.filtros {
+    text-align: center;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.filtros label {
+    margin: 0 10px;
+}
+
+.catalogo-autos {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #fff;
+}
+
+.catalo-autos {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #fff;
+}
+
+.grid-autos {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* Ajuste inicial para pantallas pequeñas */
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto; /* Centrar el catálogo */
+}
+
+@media (min-width: 768px) {
+    .grid-autos {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas para pantallas medianas */
+    }
+}
+
+@media (min-width: 992px) {
+    .grid-autos {
+        grid-template-columns: repeat(3, 1fr); /* 3 columnas para pantallas grandes */
+    }
+}
+
+.tarjeta-auto {
+    border: 1px solid #000000;
+    padding: 20px;
+    margin: 10px;
+    background: linear-gradient(to bottom, #fff, #f7f7f7);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s, color 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #333;
+}
+
+.tarjeta-auto:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(244, 0, 0, 0.2);
+    background-color: #7e0101;
+    color: #000000;
+}
+
+.tarjeta-auto img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.tarjeta-auto h3 {
+    font-size: 1.2em;
+    margin: 10px 0;
+    text-align: left;
+    color: inherit;
+}
+
+.tarjeta-auto p {
+    font-size: 1em;
+    color: inherit;
+    text-align: left;
+}
+
+.tarjeta-auto {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: flex-start;
+    margin-top: auto;
+}
+
+.precio-boton {
+    display: flex;
+    font-weight: 600;
+    justify-content: start;
+    width: 100%;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.tarjeta-auto button {
+    padding: 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button, .rentar-boton {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.detalles-auto {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.contenido-detalles-auto {
+    background: #fff;
+    padding: 60px;
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.detalles-auto img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.especificaciones-auto, .caracteristicas-auto {
+    text-align: left;
+    margin-top: 20px;
+}
+
+#paginacion {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+#paginacion button {
+    background-color: transparent;
+    border: 2px solid #dc2626;
+    color: #dc2626;
+    padding: 10px 15px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.3s, border-color 0.3s, color 0.3s;
+}
+
+#paginacion button:hover {
+    transform: scale(1.1);
+    border-color: #bd2a1c;
+    color: #bd2a1c;
+}
+
+#paginacion button.active {
+    border-color: black;
+    color: black;
+}
+
+.footer {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-links {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+.footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1em;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.footer-social {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.footer-social a {
+    margin: 0 10px;
+}
+
+.footer-social img {
+    width: 30px;
+    height: 30px;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 1em;
+}
+
+.modal {
+    display: none; 
+    position: fixed;
+    border-radius: 5px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 60px;
+    border: 1px solid #888;
+    width: 80%;
+    max-height: 800px;
+    max-width: 600px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.modal-content h2 {
+    text-align: center; 
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.faq-modal .accordion {
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    background-color: #f1f1f1;
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-modal .active, .faq-modal .accordion:hover {
+    background-color: #ddd;
+}
+
+.faq-modal .accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.faq-modal .active:after {
+    content: "\2212";
+}
+
+.faq-modal .panel {
+    padding: 0 18px;
+    display: none;
+    background-color: white;
+    overflow: hidden;
+}
